@@ -1,0 +1,22 @@
+.c {
+  text-align: center;
+  font-size: 20px;
+}
+
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+p {
+  font-family: 'Raleway', sans-serif;
+}
+
+.scroll-wrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  /* important:  dimensions or positioning here! */
+}
