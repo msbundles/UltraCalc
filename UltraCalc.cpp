@@ -3,69 +3,125 @@
 //imports for the mostly useless sleep
 #include <chrono>
 #include <thread>
+#include <string>
 using namespace std;
 
 //Addition function
 void add(){
-    int in1;
-    int in2;
+    string in1;
+    string in2;
     cout << "What is the first addend? ";
     cin >> in1;
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+    {
+        cout <<"Your input contains letters, please try again\n";
+        add();
+    }
     cout << "What is the second addend? ";
     cin >> in2;
-    cout << "The result is: " << in1 + in2 <<endl;
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+    {
+        cout << "Your input contains letters, please try again\n";
+        add();
+    }
+    cout << "The result is: " << stoi(in1) + stoi(in2) <<endl;
 }
 
 //Subtraction function
 void sub(){
-    int in1;
-    int in2;
+    string in1;
+    string in2;
     cout << "What is the minuend? ";
     cin >> in1;
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+    {
+        cout << "Your input contains letters, please try again\n";
+        sub();
+    }
     cout << "What is the subtrahend? ";
     cin >> in2;
-    cout << "The result is: " << in1 - in2 <<endl;
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+    {
+        cout << "Your input contains letters, please try again\n";
+        sub();
+    }
+    cout << "The result is: " << stoi(in1) - stoi(in2) <<endl;
 }
 
 //Division function
 void div(){
-    int in1;
-    int in2;
+    string in1;
+    string in2;
     cout << "What is the dividend? ";
     cin >> in1;
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+    {
+        cout << "Your input contains letters, please try again\n";
+        div();
+    }
     cout << "What is the divisor? ";
     cin >> in2;
-    cout << "The result is: " << in1 / in2 <<endl;
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+    {
+        cout << "Your input contains letters, please try again\n";
+        div();
+    }
+    cout << "The result is: " << stoi(in1) / stoi(in2) <<endl;
 }
 
 //Multiplication function
 void mul(){
-    int in1;
-    int in2;
+    string in1;
+    string in2;
     cout << "What is the first factor? ";
     cin >> in1;
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+    {
+        cout << "Your input contains letters, please try again\n";
+        mul();
+    }
     cout << "What is the second factor? ";
     cin >> in2;
-    cout << "The result is: " << in1 * in2 <<endl;
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+    {
+        cout << "Your input contains letters, please try again\n";
+        mul();
+    }
+    cout << "The result is: " << stoi(in1) * stoi(in2) <<endl;
 }
 
 //Square foot function
 void sqr(){
-    int in1;
+    string in1;
     cout << "What would you like to find the square root of? ";
     cin >> in1;
-    cout << "The result is: " << sqrt(in1) << endl;
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+    {
+        cout << "Your input contains letters, please try again\n";
+        sqr();
+    }
+    cout << "The result is: " << sqrt(stoi(in1)) << endl;
 }
 
 void hypote(){
-    int in1;
-    int in2;
+    string in1;
+    string in2;
     cout << "Input the legs of a right triangle in order to find the hypotenuse\n";
     cout <<"Leg 1: ";
     cin >> in1;
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+    {
+        cout << "Your input contains letters, please try again\n";
+        hypote();
+    }
     cout <<"Leg 2: ";
     cin >> in2;
-    cout << "The hypotenuse is "<< hypot(in1, in2) <<endl;
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+    {
+        cout << "Your input contains letters, please try again\n";
+        hypote();
+    }
+    cout << "The hypotenuse is "<< hypot(stoi(in1), stoi(in2)) <<endl;
 }
 
 //Function selection char
