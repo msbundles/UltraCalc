@@ -10,28 +10,30 @@ using namespace std;
 char symbol;
 //Boolean for the loop
 bool loop = true;
-
+bool isnum = false;
 string in1;
 string in2;
 
 //Addition function
 
-bool check(){
+void check(){
     if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!") || 
         std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
         
-        return true;
+        isnum = true;
     }
     else{
-        return false;
+        isnum = false;
     }
 }
 
 void add(){
     cout << "What is the first addend? ";
     cin >> in1;
+    cout <<in1<<endl;
     cout << "What is the second addend? ";
     cin >> in2;
+    cout <<in2<<endl;
     cout << "The result is: " << stoi(in1) + stoi(in2) <<endl;
 }
 
@@ -130,6 +132,7 @@ void hypote(){
 
 main(){
     while (loop){
+        check();
         //Getting user choice of function
         cout << "Type + to add\n";
         cout << "Type - to subtract\n";
@@ -142,7 +145,7 @@ main(){
         //Char needs to be compaired to it's ASCII equivleant in decimal
         if (symbol == 43){
             add();
-            if(check()){
+            if(isnum){
                 cout <<"Your input contains letters, please try again\n";
                 continue;
             }
