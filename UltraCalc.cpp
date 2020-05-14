@@ -10,6 +10,7 @@ char symbol;
 //Boolean for the loop
 bool loop = true;
 bool checkl = false;
+bool gol = true;
 string in1;
 string in2;
 
@@ -25,6 +26,15 @@ void check(){
     else{
         checkl = false;
         cout <<"bad";
+    }
+}
+
+void check2(){
+    if(checkl){
+        gol = false;
+    }
+    else{
+        gol = true;
     }
 }
 
@@ -137,6 +147,7 @@ void hypote(){
 main(){
     thread catcher (check);
     while (loop){
+        thread goer (check2);
         //Getting user choice of function
         cout << "Type + to add\n";
         cout << "Type - to subtract\n";
@@ -149,7 +160,9 @@ main(){
         //Char needs to be compaired to it's ASCII equivleant in decimal
         if (symbol == 43){
             add();
-            continue;
+            if(gol == false){
+                continue;
+            }
         }
         else if (symbol == 45){
             sub();
