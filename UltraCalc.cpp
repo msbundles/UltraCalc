@@ -8,11 +8,11 @@ using namespace std;
 char symbol;
 //Boolean for the loop
 bool loop = true;
+//globals for the input strings, you could do it either way but this is less lines
 string in1;
 string in2;
 
 //Addition function
-
 void add(){
     cout << "What is the first addend? ";
     cin >> in1;
