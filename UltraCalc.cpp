@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cmath>
 //imports for the mostly useless sleep
-#include <thread>
 #include <string>
 using namespace std;
 
@@ -9,145 +8,109 @@ using namespace std;
 char symbol;
 //Boolean for the loop
 bool loop = true;
-bool checkl = false;
-bool gol = true;
 string in1;
 string in2;
 
 //Addition function
 
-void check(){
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!") || 
-        std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
-        
-        checkl = true;
-        cout <<"good";
-    }
-    else{
-        checkl = false;
-        cout <<"bad";
-    }
-}
-
-void check2(){
-    if(checkl){
-        gol = false;
-    }
-    else{
-        gol = true;
-    }
-}
-
 void add(){
-    while(checkl == false){
-        cout << "What is the first addend? ";
-        cin >> in1;
-        cout <<in1<<endl;
-        cout << "What is the second addend? ";
-        cin >> in2;
-        cout <<in2<<endl;
+    cout << "What is the first addend? ";
+    cin >> in1;
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        return;
+    }
+    cout << "What is the second addend? ";
+    cin >> in2;
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        return;
+    }
+    else{
         cout << "The result is: " << stoi(in1) + stoi(in2) <<endl;
     }
-    
 }
 
 //Subtraction function
 void sub(){
-    
     cout << "What is the minuend? ";
     cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!"))
-    {
-        cout << "Your input contains letters, please try again\n";
-        
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        return;
     }
     cout << "What is the subtrahend? ";
     cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!"))
-    {
-        cout << "Your input contains letters, please try again\n";
-        
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        return;
     }
-    cout << "The result is: " << stoi(in1) - stoi(in2) <<endl;
+    else{
+        cout << "The result is: " << stoi(in1) - stoi(in2) <<endl;
+    }
 }
 
 //Division function
 void div(){
-    
     cout << "What is the dividend? ";
     cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!"))
-    {
-        cout << "Your input contains letters, please try again\n";
-        
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        return;
     }
     cout << "What is the divisor? ";
     cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!"))
-    {
-        cout << "Your input contains letters, please try again\n";
-        
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        return;
     }
-    cout << "The result is: " << stoi(in1) / stoi(in2) <<endl;
+    else{
+        cout << "The result is: " << stoi(in1) / stoi(in2) <<endl;
+    }
 }
 
 //Multiplication function
 void mul(){
-    
     cout << "What is the first factor? ";
     cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!"))
-    {
-        cout << "Your input contains letters, please try again\n";
-        
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        return;
     }
     cout << "What is the second factor? ";
     cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!"))
-    {
-        cout << "Your input contains letters, please try again\n";
-        
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        return;
     }
+    else{
     cout << "The result is: " << stoi(in1) * stoi(in2) <<endl;
+    }
 }
 
 //Square foot function
 void sqr(){
-    string in1;
     cout << "What would you like to find the square root of? ";
     cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!"))
-    {
-        cout << "Your input contains letters, please try again\n";
-        
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        return;
     }
+    else{
     cout << "The result is: " << sqrt(stoi(in1)) << endl;
+    }
 }
 
 void hypote(){
-    
     cout << "Input the legs of a right triangle in order to find the hypotenuse\n";
     cout <<"Leg 1: ";
     cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>""''-=*&^%$#@!()?/.,<>""''-=*&^%$#@!"))
-    {
-        cout << "Your input contains letters, please try again\n";
-        
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        return;
     }
     cout <<"Leg 2: ";
     cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>""''-=*&^%$#@!()?/.,<>""''-=*&^%$#@!"))
-    {
-        cout << "Your input contains letters, please try again\n";
-        
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        return;
     }
-    cout << "The hypotenuse is "<< hypot(stoi(in1), stoi(in2)) <<endl;
+    else{
+        cout << "The hypotenuse is "<< hypot(stoi(in1), stoi(in2)) <<endl;
+    }
 }
 
 main(){
-    thread catcher (check);
     while (loop){
-        thread goer (check2);
         //Getting user choice of function
         cout << "Type + to add\n";
         cout << "Type - to subtract\n";
@@ -160,30 +123,33 @@ main(){
         //Char needs to be compaired to it's ASCII equivleant in decimal
         if (symbol == 43){
             add();
-            if(gol == false){
-                continue;
-            }
+            cout << "Your input contains letters or symbols, please try again\n";
+            continue;
         }
         else if (symbol == 45){
             sub();
-            
+            cout << "Your input contains letters or symbols, please try again\n";
+            continue;
         }
         else if (symbol == 42){
             mul();
-            
-
+            cout << "Your input contains letters or symbols, please try again\n";
+            continue;
         }
         else if (symbol == 47){
             div();
-            
+            cout << "Your input contains letters or symbols, please try again\n";
+            continue;
         }
         else if (symbol == 115){
             sqr();
-            
+            cout << "Your input contains letters or symbols, please try again\n";
+            continue;
         }
         else if (symbol == 104){
             hypote();
-            
+            cout << "Your input contains letters or symbols, please try again\n";
+            continue;
         }
         //Input protection
         else{
