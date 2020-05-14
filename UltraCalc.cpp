@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cmath>
 //imports for the mostly useless sleep
-#include <chrono>
 #include <thread>
 #include <string>
 using namespace std;
@@ -10,33 +9,36 @@ using namespace std;
 char symbol;
 //Boolean for the loop
 bool loop = true;
-bool isnum = true;
+bool checkl = false;
 string in1;
 string in2;
 
 //Addition function
 
-void check(string in1, string in2){
+void check(){
     if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!") || 
         std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
         
-        isnum = false;
-        cout <<"good\n";
+        checkl = true;
+        cout <<"good";
     }
     else{
-        isnum = true;
+        checkl = false;
+        cout <<"bad";
     }
 }
 
 void add(){
-    cout << "What is the first addend? ";
-    cin >> in1;
-    cout <<in1<<endl;
-    cout << "What is the second addend? ";
-    cin >> in2;
-    cout <<in2<<endl;
-    check(in1, in2);
-    cout << "The result is: " << stoi(in1) + stoi(in2) <<endl;
+    while(checkl == false){
+        cout << "What is the first addend? ";
+        cin >> in1;
+        cout <<in1<<endl;
+        cout << "What is the second addend? ";
+        cin >> in2;
+        cout <<in2<<endl;
+        cout << "The result is: " << stoi(in1) + stoi(in2) <<endl;
+    }
+    
 }
 
 //Subtraction function
@@ -133,6 +135,7 @@ void hypote(){
 }
 
 main(){
+    thread catcher (check);
     while (loop){
         //Getting user choice of function
         cout << "Type + to add\n";
@@ -146,14 +149,7 @@ main(){
         //Char needs to be compaired to it's ASCII equivleant in decimal
         if (symbol == 43){
             add();
-            cout <<"something";
-            if(isnum == false){
-                cout <<"Your input contains letters, please try again\n";
-                continue;
-            }
-            else{
-                cout <<"fail\n";
-            }
+            continue;
         }
         else if (symbol == 45){
             sub();
@@ -179,8 +175,6 @@ main(){
         //Input protection
         else{
             cout <<"Your input is not recognized, please try again.\n\n";
-            //Sleep that is kind of unnecessary but nice for UX
-            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
             continue;
         }
         //Allowing for multiple calculations in a single session
