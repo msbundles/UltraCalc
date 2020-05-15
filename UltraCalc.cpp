@@ -17,13 +17,13 @@ string in2;
 void add(){
     cout << "What is the first addend? ";
     cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!()?/.,<>""''=*&^%$#@!")){
         contain = true;
         return;
     }
     cout << "What is the second addend? ";
     cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!()?/.,<>""''=*&^%$#@!")){
         contain = true;
         return;
     }
@@ -37,12 +37,12 @@ void add(){
 void sub(){
     cout << "What is the minuend? ";
     cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!()?/.,<>""''=*&^%$#@!")){
         return;
     }
     cout << "What is the subtrahend? ";
     cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!()?/.,<>""''=*&^%$#@!")){
         return;
     }
     else{
@@ -55,13 +55,13 @@ void sub(){
 void div(){
     cout << "What is the dividend? ";
     cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!()?/.,<>""''=*&^%$#@!")){
         contain = true;
         return;
     }
     cout << "What is the divisor? ";
     cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!()?/.,<>""''=*&^%$#@!")){
         contain = true;
         return;
     }
@@ -75,13 +75,13 @@ void div(){
 void mul(){
     cout << "What is the first factor? ";
     cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!()?/.,<>""''=*&^%$#@!")){
         contain = true;
         return;
     }
     cout << "What is the second factor? ";
     cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!()?/.,<>""''=*&^%$#@!")){
         contain = true;
         return;
     }
@@ -95,7 +95,7 @@ void mul(){
 void sqr(){
     cout << "What would you like to find the square root of? ";
     cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!()?/.,<>""''=*&^%$#@!")){
         contain = true;
         return;
     }
@@ -109,19 +109,57 @@ void hypote(){
     cout << "Input the legs of a right triangle in order to find the hypotenuse\n";
     cout <<"Leg 1: ";
     cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!()?/.,<>""''=*&^%$#@!")){
         contain = true;
         return;
     }
     cout <<"Leg 2: ";
     cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!()?/.,<>""''=*&^%$#@!")){
         contain = true;
         return;
     }
     else{
         contain = false;
         cout << "The hypotenuse is "<< hypot(stoi(in1), stoi(in2)) <<endl;
+    }
+}
+
+void dist(){
+    string x1;
+    string x2;
+    string y1;
+    string y2;
+    cout <<"Input your points for the distance equation\n";
+    cout <<"x1: ";
+    cin >> x1;
+    if (std::string::npos != x1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!()?/.,<>""''=*&^%$#@!")){
+        contain = true;
+        return;
+    }
+    cout <<"y1: ";
+    cin >> y1;
+    if (std::string::npos != y1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!()?/.,<>""''=*&^%$#@!")){
+        contain = true;
+        return;
+    }
+    cout <<"x2: ";
+    cin >> x2;
+    if (std::string::npos != x2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!()?/.,<>""''=*&^%$#@!")){
+        contain = true;
+        return;
+    }
+    cout <<"y2: ";
+    cin >> x2;
+    if (std::string::npos != y2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!()?/.,<>""''=*&^%$#@!")){
+        contain = true;
+        return;
+    }
+    else{
+        contain = false;
+        int x = stoi(x2) - stoi(x1);
+        int y = stoi(y2) - stoi(y1);
+        cout << "The distance between the points is"<<sqrt(pow(x, 2)+pow(y,2))<<endl;
     }
 }
 
@@ -134,6 +172,7 @@ main(){
         cout << "Type / to divide\n";
         cout << "Type s for square root\n";
         cout << "Type h for hypotenuse\n";
+        cout << "Type d for distance formula\n";
         cout << "What would you like to do? ";
         cin >> symbol;
         //Char needs to be compaired to it's ASCII equivleant in decimal
@@ -174,6 +213,13 @@ main(){
         }
         else if (symbol == 104){
             hypote();
+            if(contain){
+                cout << "Your input contains letters or symbols, please try again\n";
+                continue;
+            }
+        }
+        else if (symbol == 100){
+            dist();
             if(contain){
                 cout << "Your input contains letters or symbols, please try again\n";
                 continue;
