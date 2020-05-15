@@ -140,16 +140,6 @@ void dist(){
     cin >> x2;
     cout <<"y2: ";
     cin >> x2;
-    /*
-    pseudo code for the filtering
-    goes over all inputs>
-    if(there is a negative){
-        remove the negative symbol and
-        set an int to the converted string minus it self and set a boolean for wethere there was a negative at all
-    }
-    repeat the above if for all of the inputs and then check the boolean to ether use the converted string or the int.
-    I need to think about this a lot more
-    */
     int x = x2 - x1;
     int y = y2 - y1;
     cout << "The distance between the points is "<<sqrt(pow(x, 2)+pow(y,2))<<endl;
