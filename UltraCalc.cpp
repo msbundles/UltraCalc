@@ -8,6 +8,7 @@ using namespace std;
 char symbol;
 //Boolean for the loop
 bool loop = true;
+bool contain = false;
 //globals for the input strings, you could do it either way but this is less lines
 string in1;
 string in2;
@@ -17,14 +18,17 @@ void add(){
     cout << "What is the first addend? ";
     cin >> in1;
     if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        contain = true;
         return;
     }
     cout << "What is the second addend? ";
     cin >> in2;
     if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        contain = true;
         return;
     }
     else{
+        contain = false;
         cout << "The result is: " << stoi(in1) + stoi(in2) <<endl;
     }
 }
@@ -42,6 +46,7 @@ void sub(){
         return;
     }
     else{
+        contain = false;
         cout << "The result is: " << stoi(in1) - stoi(in2) <<endl;
     }
 }
@@ -51,14 +56,17 @@ void div(){
     cout << "What is the dividend? ";
     cin >> in1;
     if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        contain = true;
         return;
     }
     cout << "What is the divisor? ";
     cin >> in2;
     if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        contain = true;
         return;
     }
     else{
+        contain = false;
         cout << "The result is: " << stoi(in1) / stoi(in2) <<endl;
     }
 }
@@ -68,14 +76,17 @@ void mul(){
     cout << "What is the first factor? ";
     cin >> in1;
     if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        contain = true;
         return;
     }
     cout << "What is the second factor? ";
     cin >> in2;
     if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        contain = true;
         return;
     }
     else{
+        contain = false;
     cout << "The result is: " << stoi(in1) * stoi(in2) <<endl;
     }
 }
@@ -85,9 +96,11 @@ void sqr(){
     cout << "What would you like to find the square root of? ";
     cin >> in1;
     if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        contain = true;
         return;
     }
     else{
+        contain = false;
     cout << "The result is: " << sqrt(stoi(in1)) << endl;
     }
 }
@@ -97,14 +110,17 @@ void hypote(){
     cout <<"Leg 1: ";
     cin >> in1;
     if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        contain = true;
         return;
     }
     cout <<"Leg 2: ";
     cin >> in2;
     if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>-=*&^%$#@!()?/.,<>""''-=*&^%$#@!")){
+        contain = true;
         return;
     }
     else{
+        contain = false;
         cout << "The hypotenuse is "<< hypot(stoi(in1), stoi(in2)) <<endl;
     }
 }
@@ -123,33 +139,45 @@ main(){
         //Char needs to be compaired to it's ASCII equivleant in decimal
         if (symbol == 43){
             add();
-            cout << "Your input contains letters or symbols, please try again\n";
-            continue;
+            if(contain){
+                cout << "Your input contains letters or symbols, please try again\n";
+                continue;
+            }
         }
         else if (symbol == 45){
             sub();
-            cout << "Your input contains letters or symbols, please try again\n";
-            continue;
+            if(contain){
+                cout << "Your input contains letters or symbols, please try again\n";
+                continue;
+            }
         }
         else if (symbol == 42){
             mul();
-            cout << "Your input contains letters or symbols, please try again\n";
-            continue;
+            if(contain){
+                cout << "Your input contains letters or symbols, please try again\n";
+                continue;
+            }
         }
         else if (symbol == 47){
             div();
-            cout << "Your input contains letters or symbols, please try again\n";
-            continue;
+            if(contain){
+                cout << "Your input contains letters or symbols, please try again\n";
+                continue;
+            }
         }
         else if (symbol == 115){
             sqr();
-            cout << "Your input contains letters or symbols, please try again\n";
-            continue;
+            if(contain){
+                cout << "Your input contains letters or symbols, please try again\n";
+                continue;
+            }
         }
         else if (symbol == 104){
             hypote();
-            cout << "Your input contains letters or symbols, please try again\n";
-            continue;
+            if(contain){
+                cout << "Your input contains letters or symbols, please try again\n";
+                continue;
+            }
         }
         //Input protection
         else{
