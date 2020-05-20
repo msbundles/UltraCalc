@@ -16,13 +16,13 @@ std::string in2;
 void add(){
     std::cout << "What is the first addend? ";
     std::cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
         contain = true;
         return;
     }
     std::cout << "What is the second addend? ";
     std::cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
         contain = true;
         return;
     }
@@ -36,12 +36,12 @@ void add(){
 void sub(){
     std::cout << "What is the minuend? ";
     std::cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
         return;
     }
     std::cout << "What is the subtrahend? ";
     std::cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
         return;
     }
     else{
@@ -54,13 +54,13 @@ void sub(){
 void div(){
     std::cout << "What is the dividend? ";
     std::cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
         contain = true;
         return;
     }
     std::cout << "What is the divisor? ";
     std::cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
         contain = true;
         return;
     }
@@ -74,13 +74,13 @@ void div(){
 void mul(){
     std::cout << "What is the first factor? ";
     std::cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
         contain = true;
         return;
     }
     std::cout << "What is the second factor? ";
     std::cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
         contain = true;
         return;
     }
@@ -94,7 +94,7 @@ void mul(){
 void sqr(){
     std::cout << "What would you like to find the square root of? ";
     std::cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
         contain = true;
         return;
     }
@@ -109,13 +109,13 @@ void hypote(){
     std::cout << "Input the legs of a right triangle in order to find the hypotenuse\n";
     std::cout << "Leg 1: ";
     std::cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
         contain = true;
         return;
     }
     std::cout << "Leg 2: ";
     std::cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
         contain = true;
         return;
     }
@@ -132,29 +132,28 @@ void dist(){
     std::string x2;
     std::string y1;
     std::string y2;
-    std::cout << "WARNING: the following inputs are not filtered so\nplease make sure you input numbers.\n";
     std::cout << "Input your points for the distance equation\n";
     std::cout << "x1: ";
     std::cin >> x1;
-    if (std::string::npos != x1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+    if (std::string::npos != x1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
         contain = true;
         return;
     }
     std::cout << "y1: ";
     std::cin >> y1;
-    if (std::string::npos != y1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+    if (std::string::npos != y1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
         contain = true;
         return;
     }
     std::cout << "x2: ";
     std::cin >> x2;
-    if (std::string::npos != x2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+    if (std::string::npos != x2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
         contain = true;
         return;
     }
     std::cout << "y2: ";
     std::cin >> y2;
-    if (std::string::npos != y2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+    if (std::string::npos != y2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
         contain = true;
         return;
     }
@@ -164,6 +163,7 @@ void dist(){
 }
 
 main(){
+    std::cout << "WARNING: Like everything, this program is not perfect so please\ndouble check that your inputs are correct before submiting them.\n";
     while (loop){
         //Getting user choice of function
         std::cout << "Type + to add\n";
@@ -234,7 +234,7 @@ main(){
         std::string q;
         std::cout << "Would you like to make another calculation (y/n)? ";
         std::cin >> q;
-        if (q == "q"){
+        if (q == "y"){
             loop = true;
         }
         else{
