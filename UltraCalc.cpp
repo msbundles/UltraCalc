@@ -29,7 +29,7 @@ void add(){
     }
     else{
         contain = false;
-        cout << "The result is: " << stoi(in1) + stoi(in2) <<endl;
+        cout << "The result is: " << stoi(in1) + stoi(in2) << endl;
     }
 }
 
@@ -47,7 +47,7 @@ void sub(){
     }
     else{
         contain = false;
-        cout << "The result is: " << stoi(in1) - stoi(in2) <<endl;
+        cout << "The result is: " << stoi(in1) - stoi(in2) << endl;
     }
 }
 
@@ -67,7 +67,7 @@ void div(){
     }
     else{
         contain = false;
-        cout << "The result is: " << stoi(in1) / stoi(in2) <<endl;
+        cout << "The result is: " << stoi(in1) / stoi(in2) << endl;
     }
 }
 
@@ -87,7 +87,7 @@ void mul(){
     }
     else{
         contain = false;
-    cout << "The result is: " << stoi(in1) * stoi(in2) <<endl;
+    cout << "The result is: " << stoi(in1) * stoi(in2) << endl;
     }
 }
 
@@ -107,13 +107,13 @@ void sqr(){
 
 void hypote(){
     cout << "Input the legs of a right triangle in order to find the hypotenuse\n";
-    cout <<"Leg 1: ";
+    cout << "Leg 1: ";
     cin >> in1;
     if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         contain = true;
         return;
     }
-    cout <<"Leg 2: ";
+    cout << "Leg 2: ";
     cin >> in2;
     if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         contain = true;
@@ -121,7 +121,7 @@ void hypote(){
     }
     else{
         contain = false;
-        cout << "The hypotenuse is "<< hypot(stoi(in1), stoi(in2)) <<endl;
+        cout << "The hypotenuse is " << hypot(stoi(in1), stoi(in2)) << endl;
     }
 }
 
@@ -130,20 +130,19 @@ void dist(){
     int x2;
     int y1;
     int y2;
-    cout <<"WARNING: the following inputs are not filtered so\nplease make sure you input numbers.\n";
-    cout <<"Input your points for the distance equation\n";
-    cout <<"x1: ";
+    cout << "WARNING: the following inputs are not filtered so\nplease make sure you input numbers.\n";
+    cout << "Input your points for the distance equation\n";
+    cout << "x1: ";
     cin >> x1;
-    cout <<"y1: ";
+    cout << "y1: ";
     cin >> y1;
-    cout <<"x2: ";
+    cout << "x2: ";
     cin >> x2;
-    cout <<"y2: ";
+    cout << "y2: ";
     cin >> x2;    
     int x = x2 - x1;
     int y = y2 - y1;
-    cout << "The distance between the points is "<<sqrt(pow(x, 2)+pow(y,2))<<endl;
-    
+    cout << "The distance between the points is " <<sqrt(pow(x, 2)+pow(y,2))<< endl;   
 }
 
 main(){
@@ -210,7 +209,7 @@ main(){
         }
         //Input protection
         else{
-            cout <<"Your input is not recognized, please try again.\n\n";
+            cout << "Your input is not recognized, please try again.\n\n";
             continue;
         }
         //Allowing for multiple calculations in a single session
