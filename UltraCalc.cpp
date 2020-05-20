@@ -126,22 +126,38 @@ void hypote(){
 }
 
 void dist(){
-    int x1;
-    int x2;
-    int y1;
-    int y2;
+    string x1;
+    string x2;
+    string y1;
+    string y2;
     cout << "WARNING: the following inputs are not filtered so\nplease make sure you input numbers.\n";
     cout << "Input your points for the distance equation\n";
     cout << "x1: ";
     cin >> x1;
+    if (std::string::npos != x1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+        contain = true;
+        return;
+    }
     cout << "y1: ";
     cin >> y1;
+    if (std::string::npos != y1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+        contain = true;
+        return;
+    }
     cout << "x2: ";
     cin >> x2;
+    if (std::string::npos != x2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+        contain = true;
+        return;
+    }
     cout << "y2: ";
-    cin >> x2;    
-    int x = x2 - x1;
-    int y = y2 - y1;
+    cin >> y2;
+    if (std::string::npos != y2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
+        contain = true;
+        return;
+    }
+    int x = stoi(x2) - stoi(x1);
+    int y = stoi(y2) - stoi(y1);
     cout << "The distance between the points is " <<sqrt(pow(x, 2)+pow(y,2))<< endl;   
 }
 
