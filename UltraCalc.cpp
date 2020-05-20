@@ -1,238 +1,240 @@
 #include <iostream>
 #include <cmath>
-//imports for the mostly useless sleep
 #include <string>
-using namespace std;
 
 //Function selection char
-string symbol;
+std::string symbol;
 //Boolean for the loop
 bool loop = true;
+//Boolean for symbol checking
 bool contain = false;
-//globals for the input strings, you could do it either way but this is less lines
-string in1;
-string in2;
+//Globals for the input strings, you could do it either way but this is less lines
+std::string in1;
+std::string in2;
 
 //Addition function
 void add(){
-    cout << "What is the first addend? ";
-    cin >> in1;
+    std::cout << "What is the first addend? ";
+    std::cin >> in1;
     if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         contain = true;
         return;
     }
-    cout << "What is the second addend? ";
-    cin >> in2;
+    std::cout << "What is the second addend? ";
+    std::cin >> in2;
     if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         contain = true;
         return;
     }
     else{
         contain = false;
-        cout << "The result is: " << stoi(in1) + stoi(in2) << endl;
+        std::cout << "The result is: " << stoi(in1) + stoi(in2) << std::endl;
     }
 }
 
 //Subtraction function
 void sub(){
-    cout << "What is the minuend? ";
-    cin >> in1;
+    std::cout << "What is the minuend? ";
+    std::cin >> in1;
     if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         return;
     }
-    cout << "What is the subtrahend? ";
-    cin >> in2;
+    std::cout << "What is the subtrahend? ";
+    std::cin >> in2;
     if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         return;
     }
     else{
         contain = false;
-        cout << "The result is: " << stoi(in1) - stoi(in2) << endl;
+        std::cout << "The result is: " << stoi(in1) - stoi(in2) << std::endl;
     }
 }
 
 //Division function
 void div(){
-    cout << "What is the dividend? ";
-    cin >> in1;
+    std::cout << "What is the dividend? ";
+    std::cin >> in1;
     if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         contain = true;
         return;
     }
-    cout << "What is the divisor? ";
-    cin >> in2;
+    std::cout << "What is the divisor? ";
+    std::cin >> in2;
     if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         contain = true;
         return;
     }
     else{
         contain = false;
-        cout << "The result is: " << stoi(in1) / stoi(in2) << endl;
+        std::cout << "The result is: " << stoi(in1) / stoi(in2) << std::endl;
     }
 }
 
 //Multiplication function
 void mul(){
-    cout << "What is the first factor? ";
-    cin >> in1;
+    std::cout << "What is the first factor? ";
+    std::cin >> in1;
     if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         contain = true;
         return;
     }
-    cout << "What is the second factor? ";
-    cin >> in2;
+    std::cout << "What is the second factor? ";
+    std::cin >> in2;
     if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         contain = true;
         return;
     }
     else{
         contain = false;
-    cout << "The result is: " << stoi(in1) * stoi(in2) << endl;
+    std::cout << "The result is: " << stoi(in1) * stoi(in2) << std::endl;
     }
 }
 
-//Square foot function
+//Square root function
 void sqr(){
-    cout << "What would you like to find the square root of? ";
-    cin >> in1;
+    std::cout << "What would you like to find the square root of? ";
+    std::cin >> in1;
     if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         contain = true;
         return;
     }
     else{
         contain = false;
-    cout << "The result is: " << sqrt(stoi(in1)) << endl;
+    std::cout << "The result is: " << sqrt(stoi(in1)) << std::endl;
     }
 }
 
+//Hypotenuse function
 void hypote(){
-    cout << "Input the legs of a right triangle in order to find the hypotenuse\n";
-    cout << "Leg 1: ";
-    cin >> in1;
+    std::cout << "Input the legs of a right triangle in order to find the hypotenuse\n";
+    std::cout << "Leg 1: ";
+    std::cin >> in1;
     if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         contain = true;
         return;
     }
-    cout << "Leg 2: ";
-    cin >> in2;
+    std::cout << "Leg 2: ";
+    std::cin >> in2;
     if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         contain = true;
         return;
     }
     else{
         contain = false;
-        cout << "The hypotenuse is " << hypot(stoi(in1), stoi(in2)) << endl;
+        std::cout << "The hypotenuse is " << hypot(stoi(in1), stoi(in2)) << std::endl;
     }
 }
 
+
+//Distance function
 void dist(){
-    string x1;
-    string x2;
-    string y1;
-    string y2;
-    cout << "WARNING: the following inputs are not filtered so\nplease make sure you input numbers.\n";
-    cout << "Input your points for the distance equation\n";
-    cout << "x1: ";
-    cin >> x1;
+    std::string x1;
+    std::string x2;
+    std::string y1;
+    std::string y2;
+    std::cout << "WARNING: the following inputs are not filtered so\nplease make sure you input numbers.\n";
+    std::cout << "Input your points for the distance equation\n";
+    std::cout << "x1: ";
+    std::cin >> x1;
     if (std::string::npos != x1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         contain = true;
         return;
     }
-    cout << "y1: ";
-    cin >> y1;
+    std::cout << "y1: ";
+    std::cin >> y1;
     if (std::string::npos != y1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         contain = true;
         return;
     }
-    cout << "x2: ";
-    cin >> x2;
+    std::cout << "x2: ";
+    std::cin >> x2;
     if (std::string::npos != x2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         contain = true;
         return;
     }
-    cout << "y2: ";
-    cin >> y2;
+    std::cout << "y2: ";
+    std::cin >> y2;
     if (std::string::npos != y2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+ ")){
         contain = true;
         return;
     }
     int x = stoi(x2) - stoi(x1);
     int y = stoi(y2) - stoi(y1);
-    cout << "The distance between the points is " <<sqrt(pow(x, 2)+pow(y,2))<< endl;   
+    std::cout << "The distance between the points is " <<sqrt(pow(x, 2)+pow(y,2))<< std::endl;    
 }
 
 main(){
     while (loop){
         //Getting user choice of function
-        cout << "Type + to add\n";
-        cout << "Type - to subtract\n";
-        cout << "Type * to multiply\n";
-        cout << "Type / to divide\n";
-        cout << "Type s for square root\n";
-        cout << "Type h for hypotenuse\n";
-        cout << "Type d for distance formula\n";
-        cout << "What would you like to do? ";
-        cin >> symbol;
-        //Char needs to be compaired to it's ASCII equivleant in decimal
+        std::cout << "Type + to add\n";
+        std::cout << "Type - to subtract\n";
+        std::cout << "Type * to multiply\n";
+        std::cout << "Type / to divide\n";
+        std::cout << "Type s for square root\n";
+        std::cout << "Type h for hypotenuse\n";
+        std::cout << "Type d for distance formula\n";
+        std::cout << "What would you like to do? ";
+        std::cin >> symbol;
+        //Compareing the input string to determine desired function
         if (symbol == "+"){
             add();
             if(contain){
-                cout << "Your input contains letters or symbols, please try again\n";
+                std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "-"){
             sub();
             if(contain){
-                cout << "Your input contains letters or symbols, please try again\n";
+                std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "*"){
             mul();
             if(contain){
-                cout << "Your input contains letters or symbols, please try again\n";
+                std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "/"){
             div();
             if(contain){
-                cout << "Your input contains letters or symbols, please try again\n";
+                std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "s"){
             sqr();
             if(contain){
-                cout << "Your input contains letters or symbols, please try again\n";
+                std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "h"){
             hypote();
             if(contain){
-                cout << "Your input contains letters or symbols, please try again\n";
+                std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "d"){
             dist();
             if(contain){
-                cout << "Your input contains letters or symbols, please try again\n";
+                std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         //Input protection
         else{
-            cout << "Your input is not recognized, please try again.\n\n";
+            std::cout << "Your input is not recognized, please try again.\n\n";
             continue;
         }
         //Allowing for multiple calculations in a single session
-        char q;
-        cout << "Would you like to make another calculation (y/n)? ";
-        cin >> q;
-        if (q == 121){
+        std::string q;
+        std::cout << "Would you like to make another calculation (y/n)? ";
+        std::cin >> q;
+        if (q == "q"){
             loop = true;
         }
         else{
