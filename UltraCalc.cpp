@@ -166,6 +166,7 @@ main(){
     std::cout << "WARNING: Like everything, this program is not perfect so please\ndouble check that your inputs are correct before submiting them.\n";
     while (loop){
         //Getting user choice of function
+        std::cout << "Type q to quit\n";
         std::cout << "Type + to add\n";
         std::cout << "Type - to subtract\n";
         std::cout << "Type * to multiply\n";
@@ -224,6 +225,9 @@ main(){
                 std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
+        }
+        else if (symbol == "q"){
+            break;
         }
         //Input protection
         else{
