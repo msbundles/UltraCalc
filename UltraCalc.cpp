@@ -6,8 +6,6 @@
 std::string symbol;
 //Boolean for the loop
 bool loop = true;
-//Boolean for symbol checking
-bool contain = false;
 //Globals for the input strings, you could do it either way but this is less lines
 std::string in1;
 std::string in2;
@@ -16,92 +14,43 @@ std::string in2;
 void add(){
     std::cout << "What is the first addend? ";
     std::cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
-        contain = true;
-        return;
-    }
     std::cout << "What is the second addend? ";
     std::cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
-        contain = true;
-        return;
-    }
-    else{
-        contain = false;
-        std::cout << "The result is: " << stoi(in1) + stoi(in2) << std::endl;
-    }
+    std::cout << "The result is: " << stoi(in1) + stoi(in2) << std::endl;
 }
 
 //Subtraction function
 void sub(){
     std::cout << "What is the minuend? ";
     std::cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
-        return;
-    }
     std::cout << "What is the subtrahend? ";
     std::cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
-        return;
-    }
-    else{
-        contain = false;
-        std::cout << "The result is: " << stoi(in1) - stoi(in2) << std::endl;
-    }
+    std::cout << "The result is: " << stoi(in1) - stoi(in2) << std::endl;
 }
 
 //Division function
 void div(){
     std::cout << "What is the dividend? ";
     std::cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
-        contain = true;
-        return;
-    }
     std::cout << "What is the divisor? ";
     std::cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
-        contain = true;
-        return;
-    }
-    else{
-        contain = false;
-        std::cout << "The result is: " << stoi(in1) / stoi(in2) << std::endl;
-    }
+    std::cout << "The result is: " << stoi(in1) / stoi(in2) << std::endl;
 }
 
 //Multiplication function
 void mul(){
     std::cout << "What is the first factor? ";
-    std::cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
-        contain = true;
-        return;
-    }
+    std::cin >> in1; 
     std::cout << "What is the second factor? ";
     std::cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
-        contain = true;
-        return;
-    }
-    else{
-        contain = false;
     std::cout << "The result is: " << stoi(in1) * stoi(in2) << std::endl;
-    }
 }
 
 //Square root function
 void sqr(){
     std::cout << "What would you like to find the square root of? ";
     std::cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
-        contain = true;
-        return;
-    }
-    else{
-        contain = false;
     std::cout << "The result is: " << sqrt(stoi(in1)) << std::endl;
-    }
 }
 
 //Hypotenuse function
@@ -109,22 +58,10 @@ void hypote(){
     std::cout << "Input the legs of a right triangle in order to find the hypotenuse\n";
     std::cout << "Leg 1: ";
     std::cin >> in1;
-    if (std::string::npos != in1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
-        contain = true;
-        return;
-    }
     std::cout << "Leg 2: ";
     std::cin >> in2;
-    if (std::string::npos != in2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
-        contain = true;
-        return;
-    }
-    else{
-        contain = false;
-        std::cout << "The hypotenuse is " << hypot(stoi(in1), stoi(in2)) << std::endl;
-    }
+    std::cout << "The hypotenuse is " << hypot(stoi(in1), stoi(in2)) << std::endl;
 }
-
 
 //Distance function
 void dist(){
@@ -135,28 +72,12 @@ void dist(){
     std::cout << "Input your points for the distance equation\n";
     std::cout << "x1: ";
     std::cin >> x1;
-    if (std::string::npos != x1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
-        contain = true;
-        return;
-    }
     std::cout << "y1: ";
     std::cin >> y1;
-    if (std::string::npos != y1.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
-        contain = true;
-        return;
-    }
     std::cout << "x2: ";
     std::cin >> x2;
-    if (std::string::npos != x2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
-        contain = true;
-        return;
-    }
     std::cout << "y2: ";
     std::cin >> y2;
-    if (std::string::npos != y2.find_first_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()?/.,<>=*&^%$#@!+")){
-        contain = true;
-        return;
-    }
     int x = stoi(x2) - stoi(x1);
     int y = stoi(y2) - stoi(y1);
     std::cout << "The distance between the points is " <<sqrt(pow(x, 2)+pow(y,2))<< std::endl;    
@@ -178,50 +99,92 @@ main(){
         std::cin >> symbol;
         //Compareing the input string to determine desired function
         if (symbol == "+"){
-            add();
-            if(contain){
+            try{
+                add();
+            }
+            catch(std::out_of_range){
+                std::cout << "your input was too large, please try again\n";
+                continue;
+            }
+            catch(std::invalid_argument){
                 std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "-"){
-            sub();
-            if(contain){
+            try{
+                sub();
+            }
+            catch(std::out_of_range){
+                std::cout << "your input was too large, please try again\n";
+                continue;
+            }
+            catch(std::invalid_argument){
                 std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "*"){
-            mul();
-            if(contain){
+            try{
+                mul();
+            }
+            catch(std::out_of_range){
+                std::cout << "your input was too large, please try again\n";
+                continue;
+            }
+            catch(std::invalid_argument){
                 std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "/"){
-            div();
-            if(contain){
+            try{
+                div();
+            }
+            catch(std::out_of_range){
+                std::cout << "your input was too large, please try again\n";
+                continue;
+            }
+            catch(std::invalid_argument){
                 std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "s"){
-            sqr();
-            if(contain){
+            try{
+                sqr();
+            }
+            catch(std::out_of_range){
+                std::cout << "your input was too large, please try again\n";
+                continue;
+            }
+            catch(std::invalid_argument){
                 std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "h"){
-            hypote();
-            if(contain){
+            try{
+                hypote();
+            }
+            catch(std::out_of_range){
+                std::cout << "your input was too large, please try again\n";
+                continue;
+            }
+            catch(std::invalid_argument){
                 std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "d"){
-            dist();
-            if(contain){
+            try{
+                dist();
+            }
+            catch(std::out_of_range){
+                std::cout << "your input was too large, please try again\n";
+                continue;
+            }
+            catch(std::invalid_argument){
                 std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
@@ -231,7 +194,7 @@ main(){
         }
         //Input protection
         else{
-            std::cout << "Your input is not recognized, please try again.\n\n";
+            std::cout << "Your input is not recognized, please try again.\n";
             continue;
         }
         //Allowing for multiple calculations in a single session
