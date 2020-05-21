@@ -178,49 +178,91 @@ main(){
         std::cin >> symbol;
         //Compareing the input string to determine desired function
         if (symbol == "+"){
-            add();
+            try{
+                add();
+            }
+            catch(std::out_of_range){
+                std::cout << "your input was too large, please try again\n";
+                continue;
+            }
             if(contain){
                 std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "-"){
-            sub();
+            try{
+                sub();
+            }
+            catch(std::out_of_range){
+                std::cout << "your input was too large, please try again\n";
+                continue;
+            }
             if(contain){
                 std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "*"){
-            mul();
+            try{
+                mul();
+            }
+            catch(std::out_of_range){
+                std::cout << "your input was too large, please try again\n";
+                continue;
+            }
             if(contain){
                 std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "/"){
-            div();
+            try{
+                div();
+            }
+            catch(std::out_of_range){
+                std::cout << "your input was too large, please try again\n";
+                continue;
+            }
             if(contain){
                 std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "s"){
-            sqr();
+            try{
+                sqr();
+            }
+            catch(std::out_of_range){
+                std::cout << "your input was too large, please try again\n";
+                continue;
+            }
             if(contain){
                 std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "h"){
-            hypote();
+            try{
+                hypote();
+            }
+            catch(std::out_of_range){
+                std::cout << "your input was too large, please try again\n";
+                continue;
+            }
             if(contain){
                 std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
             }
         }
         else if (symbol == "d"){
-            dist();
+            try{
+                dist();
+            }
+            catch(std::out_of_range){
+                std::cout << "your input was too large, please try again\n";
+                continue;
+            }
             if(contain){
                 std::cout << "Your input contains letters or symbols, please try again\n";
                 continue;
@@ -231,7 +273,7 @@ main(){
         }
         //Input protection
         else{
-            std::cout << "Your input is not recognized, please try again.\n\n";
+            std::cout << "Your input is not recognized, please try again.\n";
             continue;
         }
         //Allowing for multiple calculations in a single session
