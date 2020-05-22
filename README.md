@@ -1,6 +1,7 @@
 # UltraCalc
-This repository contains two programs, UltraCalc written in c++ and UltraCalc written in python. The c++ version will continue to be improved and added on to and will most likely be the main focus of this repository. The program is a four function calculator with other assorted features. The python version is hosted [here](https://msbundles.github.io/UltraCalc/).
-## Compilation instructions for the c++ version
+This repository contains two programs, UltraCalc written in C++
+C++ and UltraCalc written in python. The C++ version will continue to be improved and added on to and will most likely be the main focus of this repository. The program is a four function calculator with other assorted features. The python version is hosted [here](https://msbundles.github.io/UltraCalc/).
+## Compilation instructions for the C++ version
 The c++ version requires gcc or equivalent and has only been tested on Linux. The command for gcc is
 
 ```g++ UltraCalc.cpp -std=gnu++11 -o ultracalc```
