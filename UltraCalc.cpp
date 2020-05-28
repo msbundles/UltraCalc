@@ -69,7 +69,7 @@ void dist(){
     std::string x2;
     std::string y1;
     std::string y2;
-    std::cout << "Input your points for the distance equation\n";
+    std::cout << "Input your points for the distance formula\n";
     std::cout << "x1: ";
     std::cin >> x1;
     std::cout << "y1: ";
@@ -83,8 +83,26 @@ void dist(){
     std::cout << "The distance between the points is " <<sqrt(pow(x, 2)+pow(y,2))<< std::endl;    
 }
 
+void mid(){
+    std::string x1;
+    std::string x2;
+    std::string y1;
+    std::string y2;
+    std::cout << "Input your points for the midpoint formula\n";
+    std::cout << "x1: ";
+    std::cin >> x1;
+    std::cout << "y1: ";
+    std::cin >> y1;
+    std::cout << "x2: ";
+    std::cin >> x2;
+    std::cout << "y2: ";
+    std::cin >> y2;
+    int x = stoi(x1) + stoi(x2);
+    int y = stoi(y1) + stoi(y2);
+    std::cout << "The the midpoint of the line segment is " <<x/2<<","<<y/2<< std::endl;
+}
+
 main(){
-    std::cout << "WARNING: Like everything, this program is not perfect so please\ndouble check that your inputs are correct before submiting them.\n";
     while (loop){
         //Getting user choice of function
         std::cout << "Type q to quit\n";
@@ -95,6 +113,7 @@ main(){
         std::cout << "Type s for square root\n";
         std::cout << "Type h for hypotenuse\n";
         std::cout << "Type d for distance formula\n";
+        std::cout << "Type m for midpoint formula\n";
         std::cout << "What would you like to do? ";
         std::cin >> symbol;
         //Compareing the input string to determine desired function
@@ -179,6 +198,19 @@ main(){
         else if (symbol == "d"){
             try{
                 dist();
+            }
+            catch(std::out_of_range){
+                std::cout << "your input was too large, please try again\n";
+                continue;
+            }
+            catch(std::invalid_argument){
+                std::cout << "Your input contains letters or symbols, please try again\n";
+                continue;
+            }
+        }
+        else if (symbol == "m"){
+            try{
+                mid();
             }
             catch(std::out_of_range){
                 std::cout << "your input was too large, please try again\n";
