@@ -9,7 +9,7 @@ bool loop = true;
 //Globals for the input strings, you could do it either way but this is less lines
 std::string in1;
 std::string in2;
-//test
+
 //Addition function
 void add(){
     std::cout << "What is the first addend? ";
