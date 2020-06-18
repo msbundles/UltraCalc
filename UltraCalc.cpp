@@ -102,7 +102,7 @@ void mid(){
     std::cout << "The the midpoint of the line segment is " <<x/2<<","<<y/2<< std::endl;
 }
 
-main(){
+int main(){
     while (loop){
         //Getting user choice of function
         std::cout << "Type q to quit\n";
