@@ -1,3 +1,4 @@
+//Importing all of the functions and libraries
 #include "functions.cpp"
 int main(){
     while (loop){
@@ -11,6 +12,7 @@ int main(){
         std::cout << "Type h for hypotenuse\n";
         std::cout << "Type d for distance formula\n";
         std::cout << "Type m for midpoint formula\n";
+        std::cout << "Type qf for quadratic formula\n";
         std::cout << "What would you like to do? ";
         std::cin >> symbol;
         //Compareing the input string to determine desired function
@@ -108,6 +110,19 @@ int main(){
         else if (symbol == "m"){
             try{
                 mid();
+            }
+            catch(std::out_of_range){
+                std::cout << "your input was too large, please try again\n";
+                continue;
+            }
+            catch(std::invalid_argument){
+                std::cout << "Your input contains letters or symbols, please try again\n";
+                continue;
+            }
+        }
+        else if (symbol == "qf"){
+            try{
+                quad();
             }
             catch(std::out_of_range){
                 std::cout << "your input was too large, please try again\n";
