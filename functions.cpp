@@ -16,7 +16,9 @@ void add(){
     std::cin >> in1;
     std::cout << "What is the second addend? ";
     std::cin >> in2;
-    std::cout << "The result is: " << stof(in1) + stof(in2) << std::endl;
+    double in1d = stof(in1);
+    double in2d = stof(in2);
+    std::cout << "The result is: " << in1d + in2d << std::endl;
 }
 
 //Subtraction function
@@ -25,7 +27,9 @@ void sub(){
     std::cin >> in1;
     std::cout << "What is the subtrahend? ";
     std::cin >> in2;
-    std::cout << "The result is: " << stof(in1) - stof(in2) << std::endl;
+    double in1d = stof(in1);
+    double in2d = stof(in2);
+    std::cout << "The result is: " << in1d - in2d << std::endl;
 }
 
 //Division function
@@ -34,7 +38,9 @@ void div(){
     std::cin >> in1;
     std::cout << "What is the divisor? ";
     std::cin >> in2;
-    std::cout << "The result is: " << stof(in1) / stof(in2) << std::endl;
+    double in1d = stof(in1);
+    double in2d = stof(in2);
+    std::cout << "The result is: " << in1d / in2d << std::endl;
 }
 
 //Multiplication function
@@ -43,14 +49,17 @@ void mul(){
     std::cin >> in1;
     std::cout << "What is the second factor? ";
     std::cin >> in2;
-    std::cout << "The result is: " << stof(in1) * stof(in2) << std::endl;
+    double in1d = stof(in1);
+    double in2d = stof(in2);
+    std::cout << "The result is: " << in1d * in2d << std::endl;
 }
 
 //Square root function
 void sqr(){
     std::cout << "What would you like to find the square root of? ";
     std::cin >> in1;
-    std::cout << "The result is: " << sqrt(stof(in1)) << std::endl;
+    double in1d = stof(in1);
+    std::cout << "The result is: " << sqrt(in1d) << std::endl;
 }
 
 //Hypotenuse function
@@ -60,7 +69,9 @@ void hypote(){
     std::cin >> in1;
     std::cout << "Leg 2: ";
     std::cin >> in2;
-    std::cout << "The hypotenuse is " << hypot(stof(in1), stof(in2)) << std::endl;
+    double in1d = stof(in1);
+    double in2d = stof(in2);
+    std::cout << "The hypotenuse is " << hypot(in1d, in2d) << std::endl;
 }
 
 //Distance function
@@ -78,8 +89,12 @@ void dist(){
     std::cin >> x2;
     std::cout << "y2: ";
     std::cin >> y2;
-    int x = stof(x2) - stof(x1);
-    int y = stof(y2) - stof(y1);
+    double x1d = stof(x1);
+    double x2d = stof(x2);
+    double y1d = stof(y1);
+    double y2d = stof(y2);
+    double x = x2d - x1d;
+    double y = y2d - y1d; 
     std::cout << "The distance between the points is " << sqrt(pow(x, 2) + pow(y, 2)) << std::endl;
 }
 
@@ -98,8 +113,12 @@ void mid(){
     std::cin >> x2;
     std::cout << "y2: ";
     std::cin >> y2;
-    int x = stof(x1) + stof(x2);
-    int y = stof(y1) + stof(y2);
+    double x1d = stof(x1);
+    double x2d = stof(x2);
+    double y1d = stof(y1);
+    double y2d = stof(y2);
+    double x = x1d + x2d;
+    double y = y1d + y2d;
     std::cout << "The the midpoint of the line segment is " << x / 2 << "," << y / 2 << std::endl;
 }
 
@@ -115,12 +134,12 @@ void quad(){
     std::cin >> b;
     std::cout << "c: ";
     std::cin >> c;    
-    float af = stof(a);
-    float bf = stof(b);
-    float cf = stof(c); 
-    float discrim = sqrt((pow(bf,2)) - (4*(af*cf)));
-    float x1 = ((bf*-1)+discrim)/(af*2);
-    float x2 = ((bf*-1)-discrim)/(af*2);
+    double ad = stof(a);
+    double bd = stof(b);
+    double cd = stof(c); 
+    double discrim = sqrt((pow(bd,2)) - (4*(ad*cd)));
+    double x1 = ((bd*-1)+discrim)/(ad*2);
+    double x2 = ((bd*-1)-discrim)/(ad*2);
     std::cout << "Your first solution is " <<x1 << std::endl;
     std::cout << "Your second solution is " <<x2 << std::endl;
 }
