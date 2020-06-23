@@ -1,6 +1,6 @@
 //Importing all of the functions and libraries
 #include "functions.cpp"
-int main(){
+int main(int argc, char* argv[]){
     while (loop){
         //Getting user choice of function
         std::cout << "Type q to quit\n";
@@ -21,11 +21,11 @@ int main(){
                 add();
             }
             catch(std::out_of_range){
-                std::cout << "your input was too large, please try again\n";
+                std::cout << "Your input was too large, please try again.\n";
                 continue;
             }
             catch(std::invalid_argument){
-                std::cout << "Your input contains letters or symbols, please try again\n";
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
                 continue;
             }
         }
@@ -34,11 +34,11 @@ int main(){
                 sub();
             }
             catch(std::out_of_range){
-                std::cout << "your input was too large, please try again\n";
+                std::cout << "Your input was too large, please try again.\n";
                 continue;
             }
             catch(std::invalid_argument){
-                std::cout << "Your input contains letters or symbols, please try again\n";
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
                 continue;
             }
         }
@@ -47,11 +47,11 @@ int main(){
                 mul();
             }
             catch(std::out_of_range){
-                std::cout << "your input was too large, please try again\n";
+                std::cout << "Your input was too large, please try again.\n";
                 continue;
             }
             catch(std::invalid_argument){
-                std::cout << "Your input contains letters or symbols, please try again\n";
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
                 continue;
             }
         }
@@ -60,11 +60,11 @@ int main(){
                 div();
             }
             catch(std::out_of_range){
-                std::cout << "your input was too large, please try again\n";
+                std::cout << "Your input was too large, please try again.\n";
                 continue;
             }
             catch(std::invalid_argument){
-                std::cout << "Your input contains letters or symbols, please try again\n";
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
                 continue;
             }
         }
@@ -73,11 +73,11 @@ int main(){
                 sqr();
             }
             catch(std::out_of_range){
-                std::cout << "your input was too large, please try again\n";
+                std::cout << "Your input was too large, please try again.\n";
                 continue;
             }
             catch(std::invalid_argument){
-                std::cout << "Your input contains letters or symbols, please try again\n";
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
                 continue;
             }
         }
@@ -86,11 +86,11 @@ int main(){
                 hypote();
             }
             catch(std::out_of_range){
-                std::cout << "your input was too large, please try again\n";
+                std::cout << "Your input was too large, please try again.\n";
                 continue;
             }
             catch(std::invalid_argument){
-                std::cout << "Your input contains letters or symbols, please try again\n";
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
                 continue;
             }
         }
@@ -99,11 +99,11 @@ int main(){
                 dist();
             }
             catch(std::out_of_range){
-                std::cout << "your input was too large, please try again\n";
+                std::cout << "Your input was too large, please try again.\n";
                 continue;
             }
             catch(std::invalid_argument){
-                std::cout << "Your input contains letters or symbols, please try again\n";
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
                 continue;
             }
         }
@@ -112,11 +112,11 @@ int main(){
                 mid();
             }
             catch(std::out_of_range){
-                std::cout << "your input was too large, please try again\n";
+                std::cout << "Your input was too large, please try again.\n";
                 continue;
             }
             catch(std::invalid_argument){
-                std::cout << "Your input contains letters or symbols, please try again\n";
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
                 continue;
             }
         }
@@ -125,11 +125,11 @@ int main(){
                 quad();
             }
             catch(std::out_of_range){
-                std::cout << "your input was too large, please try again\n";
+                std::cout << "Your input was too large, please try again.\n";
                 continue;
             }
             catch(std::invalid_argument){
-                std::cout << "Your input contains letters or symbols, please try again\n";
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
                 continue;
             }
         }
