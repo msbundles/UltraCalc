@@ -1,6 +1,7 @@
 //Importing all of the functions and libraries
-#include "functions.cpp"
+#include "includes/functions.cpp"
 int main(int argc, char* argv[]){
+
     while (loop){
         //Getting user choice of function
         std::cout << "Type q to quit\n";

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <string>
+#include <includes/CmdParser/cmdparser.hpp>
 #define _USE_MATH_DEFINES
 
 //Function selection char
@@ -21,6 +22,10 @@ std::string returnPi(std::string in){
     }
     else return in; 
 }
+
+//CLI Functions
+
+
 
 //Arithmetic functions
 
