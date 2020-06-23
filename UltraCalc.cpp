@@ -1,7 +1,19 @@
 //Importing all of the functions and libraries
 #include "includes/functions.cpp"
-int main(int argc, char* argv[]){
-
+#include <includes/CmdParser/cmdparser.hpp>
+int main(int argc, char** argv){
+    cli::Parser parser(argc, argv);
+    parser.set_optional<std::string>("i", "interactive", "Run ultracalc in interactive mode");
+    parser.set_optional<std::string>("+", "function", "Run the addition function as a singleshot");
+    parser.set_optional<std::string>("-", "function", "Run the subtraction function as a singleshot");
+    parser.set_optional<std::string>("*", "function", "Run the multiplacation function as a singleshot");
+    parser.set_optional<std::string>("/", "function", "Run the division function as a singleshot");
+    parser.set_optional<std::string>("s", "function", "Run the square function as a singleshot");
+    parser.set_optional<std::string>("h", "function", "Run the hypotenuse function as a singleshot");
+    parser.set_optional<std::string>("d", "function", "Run the distance function as a singleshot");
+    parser.set_optional<std::string>("m", "function", "Run the midpoint formula function as a singleshot");
+    parser.set_optional<std::string>("qf", "function", "Run the quadratic formula function as a singleshot");
+    parser.run_and_exit_if_error();
     while (loop){
         //Getting user choice of function
         std::cout << "Type q to quit\n";
