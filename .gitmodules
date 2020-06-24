@@ -1,3 +1,0 @@
-[submodule "includes/CmdParser"]
-	path = includes/CmdParser
-	url = https://github.com/FlorianRappl/CmdParser.git
