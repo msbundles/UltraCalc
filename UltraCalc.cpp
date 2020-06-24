@@ -27,140 +27,228 @@ std::string returnPi(std::string in){
 
 //Addition function
 void add(){
-    std::cout << "What is the first addend? ";
-    std::cin >> in1;
-    std::cout << "What is the second addend? ";
-    std::cin >> in2;
-    double in1d = stof(returnPi(in1));
-    double in2d = stof(returnPi(in2));
-    std::cout << "The result is: " << in1d + in2d << std::endl;
+    try{
+        std::cout << "What is the first addend? ";
+        std::cin >> in1;
+        std::cout << "What is the second addend? ";
+        std::cin >> in2;
+        double in1d = stof(returnPi(in1));
+        double in2d = stof(returnPi(in2));
+        std::cout << "The result is: " << in1d + in2d << std::endl;
+    }
+    catch(std::out_of_range){
+        std::cout << "Your input was too large, please try again.\n";
+        exit(EXIT_FAILURE);
+    }
+    catch(std::invalid_argument){
+        std::cout << "Your input contains letters or unknown symbols please try again.\n";
+        exit(EXIT_FAILURE);
+    }
 }
-
 //Subtraction function
 void sub(){
-    std::cout << "What is the minuend? ";
-    std::cin >> in1;
-    std::cout << "What is the subtrahend? ";
-    std::cin >> in2;
-    double in1d = stof(returnPi(in1));
-    double in2d = stof(returnPi(in2));
-    std::cout << "The result is: " << in1d - in2d << std::endl;
+    try{
+        std::cout << "What is the minuend? ";
+        std::cin >> in1;
+        std::cout << "What is the subtrahend? ";
+        std::cin >> in2;
+        double in1d = stof(returnPi(in1));
+        double in2d = stof(returnPi(in2));
+        std::cout << "The result is: " << in1d - in2d << std::endl;
+    }
+    catch(std::out_of_range){
+        std::cout << "Your input was too large, please try again.\n";
+        exit(EXIT_FAILURE);
+    }
+    catch(std::invalid_argument){
+        std::cout << "Your input contains letters or unknown symbols please try again.\n";
+        exit(EXIT_FAILURE);
+    }
 }
 
 //Division function
 void div(){
-    std::cout << "What is the dividend? ";
-    std::cin >> in1;
-    std::cout << "What is the divisor? ";
-    std::cin >> in2;
-    double in1d = stof(returnPi(in1));
-    double in2d = stof(returnPi(in2));
-    std::cout << "The result is: " << in1d / in2d << std::endl;
+    try{
+        std::cout << "What is the dividend? ";
+        std::cin >> in1;
+        std::cout << "What is the divisor? ";
+        std::cin >> in2;
+        double in1d = stof(returnPi(in1));
+        double in2d = stof(returnPi(in2));
+        std::cout << "The result is: " << in1d / in2d << std::endl;
+    }
+    catch(std::out_of_range){
+        std::cout << "Your input was too large, please try again.\n";
+        exit(EXIT_FAILURE);
+    }
+    catch(std::invalid_argument){
+        std::cout << "Your input contains letters or unknown symbols please try again.\n";
+        exit(EXIT_FAILURE);
+    }
 }
 
 //Multiplication function
 void mul(){
-    std::cout << "What is the first factor? ";
-    std::cin >> in1;
-    std::cout << "What is the second factor? ";
-    std::cin >> in2;
-    double in1d = stof(returnPi(in1));
-    double in2d = stof(returnPi(in2));
-    std::cout << "The result is: " << in1d * in2d << std::endl;
+    try{
+        std::cout << "What is the first factor? ";
+        std::cin >> in1;
+        std::cout << "What is the second factor? ";
+        std::cin >> in2;
+        double in1d = stof(returnPi(in1));
+        double in2d = stof(returnPi(in2));
+        std::cout << "The result is: " << in1d * in2d << std::endl;
+    }
+    catch(std::out_of_range){
+        std::cout << "Your input was too large, please try again.\n";
+        exit(EXIT_FAILURE);
+    }
+    catch(std::invalid_argument){
+        std::cout << "Your input contains letters or unknown symbols please try again.\n";
+        exit(EXIT_FAILURE);
+    }
 }
 
 //Square root function
 void sqr(){
-    std::cout << "What would you like to find the square root of? ";
-    std::cin >> in1;
-    double in1d = stof(returnPi(in1));
-    std::cout << "The result is: " << sqrt(in1d) << std::endl;
+    try{
+        std::cout << "What would you like to find the square root of? ";
+        std::cin >> in1;
+        double in1d = stof(returnPi(in1));
+        std::cout << "The result is: " << sqrt(in1d) << std::endl;
+    }
+    catch(std::out_of_range){
+        std::cout << "Your input was too large, please try again.\n";
+        exit(EXIT_FAILURE);
+    }
+    catch(std::invalid_argument){
+        std::cout << "Your input contains letters or unknown symbols please try again.\n";
+        exit(EXIT_FAILURE);
+    }
 }
 
 //Hypotenuse function
 void hypote(){
-    std::cout << "Input the legs of a right triangle in order to find the hypotenuse\n";
-    std::cout << "Leg 1: ";
-    std::cin >> in1;
-    std::cout << "Leg 2: ";
-    std::cin >> in2;
-    double in1d = stof(returnPi(in1));
-    double in2d = stof(returnPi(in2));
-    std::cout << "The hypotenuse is " << hypot(in1d, in2d) << std::endl;
+    try{
+        std::cout << "Input the legs of a right triangle in order to find the hypotenuse\n";
+        std::cout << "Leg 1: ";
+        std::cin >> in1;
+        std::cout << "Leg 2: ";
+        std::cin >> in2;
+        double in1d = stof(returnPi(in1));
+        double in2d = stof(returnPi(in2));
+        std::cout << "The hypotenuse is " << hypot(in1d, in2d) << std::endl;
+    }
+    catch(std::out_of_range){
+        std::cout << "Your input was too large, please try again.\n";
+        exit(EXIT_FAILURE);
+    }
+    catch(std::invalid_argument){
+        std::cout << "Your input contains letters or unknown symbols please try again.\n";
+        exit(EXIT_FAILURE);
+    }
 }
 
 //Distance function
 void dist(){
-    std::string x1;
-    std::string x2;
-    std::string y1;
-    std::string y2;
-    std::cout << "Input your points for the distance formula\n";
-    std::cout << "x1: ";
-    std::cin >> x1;
-    std::cout << "y1: ";
-    std::cin >> y1;
-    std::cout << "x2: ";
-    std::cin >> x2;
-    std::cout << "y2: ";
-    std::cin >> y2;
-    double x1d = stof(returnPi(x1));
-    double x2d = stof(returnPi(x2));
-    double y1d = stof(returnPi(y1));
-    double y2d = stof(returnPi(y2));
-    double x = x2d - x1d;
-    double y = y2d - y1d; 
-    std::cout << "The distance between the points is " << sqrt(pow(x, 2) + pow(y, 2)) << std::endl;
+    try{
+        std::string x1;
+        std::string x2;
+        std::string y1;
+        std::string y2;
+        std::cout << "Input your points for the distance formula\n";
+        std::cout << "x1: ";
+        std::cin >> x1;
+        std::cout << "y1: ";
+        std::cin >> y1;
+        std::cout << "x2: ";
+        std::cin >> x2;
+        std::cout << "y2: ";
+        std::cin >> y2;
+        double x1d = stof(returnPi(x1));
+        double x2d = stof(returnPi(x2));
+        double y1d = stof(returnPi(y1));
+        double y2d = stof(returnPi(y2));
+        double x = x2d - x1d;
+        double y = y2d - y1d; 
+        std::cout << "The distance between the points is " << sqrt(pow(x, 2) + pow(y, 2)) << std::endl;
+    }
+    catch(std::out_of_range){
+        std::cout << "Your input was too large, please try again.\n";
+        exit(EXIT_FAILURE);
+    }
+    catch(std::invalid_argument){
+        std::cout << "Your input contains letters or unknown symbols please try again.\n";
+        exit(EXIT_FAILURE);
+    }
 }
 
 //Midpoint formula function
 void mid(){
-    std::string x1;
-    std::string x2;
-    std::string y1;
-    std::string y2;
-    std::cout << "Input your points for the midpoint formula\n";
-    std::cout << "x1: ";
-    std::cin >> x1;
-    std::cout << "y1: ";
-    std::cin >> y1;
-    std::cout << "x2: ";
-    std::cin >> x2;
-    std::cout << "y2: ";
-    std::cin >> y2;
-    double x1d = stof(returnPi(x1));
-    double x2d = stof(returnPi(x2));
-    double y1d = stof(returnPi(y1));
-    double y2d = stof(returnPi(y2));
-    double x = x1d + x2d;
-    double y = y1d + y2d;
-    std::cout << "The the midpoint of the line segment is " << x / 2 << "," << y / 2 << std::endl;
+    try{
+        std::string x1;
+        std::string x2;
+        std::string y1;
+        std::string y2;
+        std::cout << "Input your points for the midpoint formula\n";
+        std::cout << "x1: ";
+        std::cin >> x1;
+        std::cout << "y1: ";
+        std::cin >> y1;
+        std::cout << "x2: ";
+        std::cin >> x2;
+        std::cout << "y2: ";
+        std::cin >> y2;
+        double x1d = stof(returnPi(x1));
+        double x2d = stof(returnPi(x2));
+        double y1d = stof(returnPi(y1));
+        double y2d = stof(returnPi(y2));
+        double x = x1d + x2d;
+        double y = y1d + y2d;
+        std::cout << "The the midpoint of the line segment is " << x / 2 << "," << y / 2 << std::endl;
+    }
+    catch(std::out_of_range){
+        std::cout << "Your input was too large, please try again.\n";
+        exit(EXIT_FAILURE);
+    }
+    catch(std::invalid_argument){
+        std::cout << "Your input contains letters or unknown symbols please try again.\n";
+        exit(EXIT_FAILURE);
+    }
 }
 
 //Quadratic formula function
 void quad(){
-    std::string a;
-    std::string b;
-    std::string c;
-    std::cout << "Input your variables for the quadratic formula\n";
-    std::cout << "a: ";
-    std::cin >> a;
-    std::cout << "b: ";
-    std::cin >> b;
-    std::cout << "c: ";
-    std::cin >> c;    
-    double ad = stof(returnPi(a));
-    double bd = stof(returnPi(b));
-    double cd = stof(returnPi(c)); 
-    double discrim = sqrt((pow(bd,2)) - (4*(ad*cd)));
-    double x1 = ((bd*-1)+discrim)/(ad*2);
-    double x2 = ((bd*-1)-discrim)/(ad*2);
-    std::cout << "Your first solution is " <<x1 << std::endl;
-    std::cout << "Your second solution is " <<x2 << std::endl;
+    try{
+        std::string a;
+        std::string b;
+        std::string c;
+        std::cout << "Input your variables for the quadratic formula\n";
+        std::cout << "a: ";
+        std::cin >> a;
+        std::cout << "b: ";
+        std::cin >> b;
+        std::cout << "c: ";
+        std::cin >> c;    
+        double ad = stof(returnPi(a));
+        double bd = stof(returnPi(b));
+        double cd = stof(returnPi(c)); 
+        double discrim = sqrt((pow(bd,2)) - (4*(ad*cd)));
+        double x1 = ((bd*-1)+discrim)/(ad*2);
+        double x2 = ((bd*-1)-discrim)/(ad*2);
+        std::cout << "Your first solution is " <<x1 << std::endl;
+        std::cout << "Your second solution is " <<x2 << std::endl;
+    }
+    catch(std::out_of_range){
+        std::cout << "Your input was too large, please try again.\n";
+        exit(EXIT_FAILURE);
+    }
+    catch(std::invalid_argument){
+        std::cout << "Your input contains letters or unknown symbols please try again.\n";
+        exit(EXIT_FAILURE);
+    }
 }
 
 //Interactive mode
-
 void interactive(){
     while (loop){
         //Getting user choice of function
@@ -334,11 +422,12 @@ void printHelp(){
     std::cerr << "Usage: " << "ultracalc" << " <option>\n"
               << "Options:\n"
               << "\t-h\tShow this help message\n"
-              << "\t-+\tAdd\n"
+              << "\t-a\tAdd\n"
               << "\t-s\tSubtract\n"
-              << "\t-*\tMultiply\n"
+              << "\t-p\tMultiply\n"
               << "\t-/\tDivide\n"
               << "\t-r\tSquare root\n"
+              << "\t-y\tHypotenuse\n"
               << "\t-d\tDistance formula\n"
               << "\t-m\tMidpoint formula\n"
               << "\t-q\tQuadratic formula\n"
@@ -347,41 +436,54 @@ void printHelp(){
 
 void parseArgs(int argc, char *argv[]){
     int opt;
-    while ((opt = getopt(argc, argv, "+s*/rhdmqi")) != -1) {
+    while ((opt = getopt(argc, argv, "asp/rhdmqiy")) != -1) {
         switch (opt) {
-        case '+':
+        case 'a':
             add();
+            return;
             break;
         case 's':
             sub();
+            return;
             break;
-        case '*':
+        case 'p':
             mul();
+            return;
             break;
         case '/':
             div();
+            return;
             break;
         case 'r':
             sqr();
+            return;
+            break;
+        case 'y':
+            hypote();
+            return;
             break;
         case 'd':
             dist();
+            return;
             break;
         case 'm':
             mid();
+            return;
             break;
         case 'q':
             quad();
+            return;
             break;
         case 'i':
             interactive();
+            return;
             break;
         case 'h':
             printHelp();
+            return;
             break;
         }
     }
-    printHelp();
 }
 
 int main(int argc, char* argv[]){
