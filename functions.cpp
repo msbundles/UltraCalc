@@ -161,62 +161,6 @@ void quad(){
     std::cout << "Your second solution is " <<x2 << std::endl;
 }
 
-//CLI Functions
-/*
-CLI argument associations
--+ = add
--s = subtract
--* = multiply
--/ = divide
--r = square root
--d = distance formula
--m = midpoint formula
--q = quadratic formula
--i = interactive mode
--h = help
-*/
-void parseArgs(int argc, char *argv[]){
-    int opt;
-    while ((opt = getopt(argc, argv, "+s*/rhdmqi")) != -1) {
-        switch (opt) {
-        case '+':
-            add();
-            break;
-        case 's':
-            sub();
-            break;
-        case '*':
-            mul();
-            break;
-        case '/':
-            
-            break;
-        case 'r':
-           
-            break;
-        case 'd':
-            
-            break;
-        case 'm':
-           
-            break;
-        case 'q':
-            
-            break;
-        case 'i':
-           
-            break;
-        case 'h':
-            
-            break;
-        default: /* '?' */
-            cout
-            exit(EXIT_FAILURE);
-        }
-    }
-
-}
-
 //Interactive mode
 
 void interactive(){
@@ -370,5 +314,77 @@ void interactive(){
         else{
             loop = false;
         } 
+    }
+}
+
+//CLI Functions
+/*
+CLI argument associations
+-+ = add
+-s = subtract
+-* = multiply
+-/ = divide
+-r = square root
+-d = distance formula
+-m = midpoint formula
+-q = quadratic formula
+-i = interactive mode
+-h = help
+*/
+
+void printHelp(char *argv[]){
+    std::cerr << "Usage: " << argv[0] << " <option>\n"
+              << "Options:\n"
+              << "\t-h\tShow this help message\n"
+              << "\t-+\tAdd\n"
+              << "\t-s\tSubtract\n"
+              << "\t-*\tMultiply\n"
+              << "\t-/\tDivide\n"
+              << "\t-r\tSquare root\n"
+              << "\t-d\tDistance formula\n"
+              << "\t-m\tMidpoint formula\n"
+              << "\t-q\tQuadratic formula\n"
+              << "\t-i\tInteractive mode\n"
+              << std::endl;
+}
+
+void parseArgs(int argc, char *argv[]){
+    int opt;
+    while ((opt = getopt(argc, argv, "+s*/rhdmqi")) != -1) {
+        switch (opt) {
+        case '+':
+            add();
+            break;
+        case 's':
+            sub();
+            break;
+        case '*':
+            mul();
+            break;
+        case '/':
+            div();
+            break;
+        case 'r':
+            sqr();
+            break;
+        case 'd':
+            dist();
+            break;
+        case 'm':
+            mid();
+            break;
+        case 'q':
+            quad();
+            break;
+        case 'i':
+            interactive();
+            break;
+        case 'h':
+            printHelp(argv);
+            break;
+        default: /* '?' */
+            std::cerr << "Usage: " << argv[0] << " <option>\n";
+            exit(EXIT_FAILURE);
+        }
     }
 }
