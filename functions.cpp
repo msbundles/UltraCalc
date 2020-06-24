@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <string>
+#include <unistd.h>
 #define _USE_MATH_DEFINES
 
 //Function selection char
@@ -21,6 +22,7 @@ std::string returnPi(std::string in){
     }
     else return in; 
 }
+
 
 
 //Arithmetic functions
@@ -157,4 +159,216 @@ void quad(){
     double x2 = ((bd*-1)-discrim)/(ad*2);
     std::cout << "Your first solution is " <<x1 << std::endl;
     std::cout << "Your second solution is " <<x2 << std::endl;
+}
+
+//CLI Functions
+/*
+CLI argument associations
+-+ = add
+-s = subtract
+-* = multiply
+-/ = divide
+-r = square root
+-d = distance formula
+-m = midpoint formula
+-q = quadratic formula
+-i = interactive mode
+-h = help
+*/
+void parseArgs(int argc, char *argv[]){
+    int opt;
+    while ((opt = getopt(argc, argv, "+s*/rhdmqi")) != -1) {
+        switch (opt) {
+        case '+':
+            add();
+            break;
+        case 's':
+            sub();
+            break;
+        case '*':
+            mul();
+            break;
+        case '/':
+            
+            break;
+        case 'r':
+           
+            break;
+        case 'd':
+            
+            break;
+        case 'm':
+           
+            break;
+        case 'q':
+            
+            break;
+        case 'i':
+           
+            break;
+        case 'h':
+            
+            break;
+        default: /* '?' */
+            cout
+            exit(EXIT_FAILURE);
+        }
+    }
+
+}
+
+//Interactive mode
+
+void interactive(){
+    while (loop){
+        //Getting user choice of function
+        std::cout << "Type q to quit\n";
+        std::cout << "Type + to add\n";
+        std::cout << "Type - to subtract\n";
+        std::cout << "Type * to multiply\n";
+        std::cout << "Type / to divide\n";
+        std::cout << "Type s for square root\n";
+        std::cout << "Type h for hypotenuse\n";
+        std::cout << "Type d for distance formula\n";
+        std::cout << "Type m for midpoint formula\n";
+        std::cout << "Type qf for quadratic formula\n";
+        std::cout << "What would you like to do? ";
+        std::cin >> symbol;
+        //Compareing the input string to determine desired function
+        if (symbol == "+"){
+            try{
+                add();
+            }
+            catch(std::out_of_range){
+                std::cout << "Your input was too large, please try again.\n";
+                continue;
+            }
+            catch(std::invalid_argument){
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
+                continue;
+            }
+        }
+        else if (symbol == "-"){
+            try{
+                sub();
+            }
+            catch(std::out_of_range){
+                std::cout << "Your input was too large, please try again.\n";
+                continue;
+            }
+            catch(std::invalid_argument){
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
+                continue;
+            }
+        }
+        else if (symbol == "*"){
+            try{
+                mul();
+            }
+            catch(std::out_of_range){
+                std::cout << "Your input was too large, please try again.\n";
+                continue;
+            }
+            catch(std::invalid_argument){
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
+                continue;
+            }
+        }
+        else if (symbol == "/"){
+            try{
+                div();
+            }
+            catch(std::out_of_range){
+                std::cout << "Your input was too large, please try again.\n";
+                continue;
+            }
+            catch(std::invalid_argument){
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
+                continue;
+            }
+        }
+        else if (symbol == "s"){
+            try{
+                sqr();
+            }
+            catch(std::out_of_range){
+                std::cout << "Your input was too large, please try again.\n";
+                continue;
+            }
+            catch(std::invalid_argument){
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
+                continue;
+            }
+        }
+        else if (symbol == "h"){
+            try{
+                hypote();
+            }
+            catch(std::out_of_range){
+                std::cout << "Your input was too large, please try again.\n";
+                continue;
+            }
+            catch(std::invalid_argument){
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
+                continue;
+            }
+        }
+        else if (symbol == "d"){
+            try{
+                dist();
+            }
+            catch(std::out_of_range){
+                std::cout << "Your input was too large, please try again.\n";
+                continue;
+            }
+            catch(std::invalid_argument){
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
+                continue;
+            }
+        }
+        else if (symbol == "m"){
+            try{
+                mid();
+            }
+            catch(std::out_of_range){
+                std::cout << "Your input was too large, please try again.\n";
+                continue;
+            }
+            catch(std::invalid_argument){
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
+                continue;
+            }
+        }
+        else if (symbol == "qf"){
+            try{
+                quad();
+            }
+            catch(std::out_of_range){
+                std::cout << "Your input was too large, please try again.\n";
+                continue;
+            }
+            catch(std::invalid_argument){
+                std::cout << "Your input contains letters or unknown symbols please try again.\n";
+                continue;
+            }
+        }
+        else if (symbol == "q"){
+            break;
+        }
+        //Input protection
+        else{
+            std::cout << "Your input is not recognized, please try again.\n";
+            continue;
+        }
+        //Allowing for multiple calculations in a single session
+        std::string q;
+        std::cout << "Would you like to make another calculation (y/n)? ";
+        std::cin >> q;
+        if (q == "y"){
+            loop = true;
+        }
+        else{
+            loop = false;
+        } 
+    }
 }
