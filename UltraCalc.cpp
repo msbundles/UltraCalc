@@ -484,6 +484,7 @@ void parseArgs(int argc, char *argv[]){
             break;
         }
     }
+    printHelp();
 }
 
 int main(int argc, char* argv[]){
