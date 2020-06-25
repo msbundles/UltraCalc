@@ -435,9 +435,7 @@ void printHelp(){
 }
 
 void parseArgs(int argc, char *argv[]){
-    int opt;
-    while ((opt = getopt(argc, argv, "asp/rhdmqiy")) != -1) {
-        switch (opt) {
+    switch (getopt(argc, argv, "asp/rhdmqiy")) {
         case 'a':
             add();
             return;
@@ -482,10 +480,10 @@ void parseArgs(int argc, char *argv[]){
             printHelp();
             return;
             break;
-        }
     }
-    printHelp();
+printHelp();
 }
+
 
 int main(int argc, char* argv[]){
     parseArgs(argc, argv);
