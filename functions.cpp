@@ -17,11 +17,9 @@ std::string in2;
 std::string returnPi(std::string in)
 {
 	std::string pi = std::to_string(M_PI);
-	if (in == "pi")
-	{
+	if (in == "pi") {
 		return pi;
-	}
-	else
+	} else
 		return in;
 }
 
