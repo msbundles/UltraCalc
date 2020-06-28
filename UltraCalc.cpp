@@ -45,6 +45,7 @@ void add(){
         exit(EXIT_FAILURE);
     }
 }
+
 //Subtraction function
 void sub(){
     try{
@@ -434,58 +435,53 @@ void printHelp(){
               << "\t-i\tInteractive mode" << std::endl;
 }
 
-void parseArgs(int argc, char *argv[]){
+int main(int argc, char* argv[]){
     switch (getopt(argc, argv, "asp/rhdmqiy")) {
         case 'a':
             add();
-            return;
+            return 0;
             break;
         case 's':
             sub();
-            return;
+            return 0;
             break;
         case 'p':
             mul();
-            return;
+            return 0;
             break;
         case '/':
             div();
-            return;
+            return 0;
             break;
         case 'r':
             sqr();
-            return;
+            return 0;
             break;
         case 'y':
             hypote();
-            return;
+            return 0;
             break;
         case 'd':
             dist();
-            return;
+            return 0;
             break;
         case 'm':
             mid();
-            return;
+            return 0;
             break;
         case 'q':
             quad();
-            return;
+            return 0;
             break;
         case 'i':
             interactive();
-            return;
+            return 0;
             break;
         case 'h':
             printHelp();
-            return;
+            return 0;
             break;
     }
-printHelp();
-}
-
-
-int main(int argc, char* argv[]){
-    parseArgs(argc, argv);
+    printHelp();
     return 0;
 }
