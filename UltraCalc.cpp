@@ -438,7 +438,8 @@ void printHelp()
 		  << "\t-d\tDistance formula\n"
 		  << "\t-m\tMidpoint formula\n"
 		  << "\t-q\tQuadratic formula\n"
-		  << "\t-i\tInteractive mode" << std::endl;
+		  << "\t-i\tInteractive mode\n"
+		  << "Replace a normal number input for 'pi'\nin order to utilize pi in your calculations.\n";
 }
 
 int main(int argc, char *argv[])
