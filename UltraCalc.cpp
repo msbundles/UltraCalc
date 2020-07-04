@@ -51,12 +51,11 @@ void add()
 		exit(EXIT_FAILURE);
 	}
 }
-
 //Subtraction function
 void sub()
-{
+{q
 	try {
-		std::cout << "What is the minuend? ";
+	        std::cout << "What is the minuend? ";
 		std::cin >> in1;
 		std::cout << "What is the subtrahend? ";
 		std::cin >> in2;
