@@ -1,7 +1,11 @@
 #include <iostream>
 #include <cmath>
 #include <string>
+#if defined(__unix__)
 #include <unistd.h>
+#else
+#include <includes/wingetopt/src/getopt.h>
+#endif
 #define _USE_MATH_DEFINES
 
 //Function selection char
