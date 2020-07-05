@@ -53,6 +53,7 @@ void add()
 		exit(EXIT_FAILURE);
 	}
 }
+
 //Subtraction function
 void sub()
 {
