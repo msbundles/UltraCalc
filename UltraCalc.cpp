@@ -42,10 +42,12 @@ void add()
 		double in2d = stof(returnPi(in2));
 		std::cout << "The result is: " << in1d + in2d << std::endl;
 	}
+	//Catching out of range errors and handling them
 	catch (std::out_of_range) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
+	//Catching invalid argument errors and handling them
 	catch (std::invalid_argument) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
@@ -53,7 +55,7 @@ void add()
 }
 //Subtraction function
 void sub()
-{q
+{
 	try {
 	        std::cout << "What is the minuend? ";
 		std::cin >> in1;
