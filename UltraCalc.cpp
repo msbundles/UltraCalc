@@ -416,16 +416,16 @@ void interactive()
 //CLI Functions
 /*
   CLI argument associations
-  -+ = add
+  -h = help
+  -a = add
   -s = subtract
-  -* = multiply
+  -p = multiply
   -/ = divide
   -r = square root
   -d = distance formula
   -m = midpoint formula
   -q = quadratic formula
   -i = interactive mode
-  -h = help
 */
 
 void printHelp()
@@ -499,3 +499,4 @@ int main(int argc, char *argv[])
 	printHelp();
 	return 0;
 }
+
