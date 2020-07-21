@@ -1,0 +1,3 @@
+[submodule "includes/wingetopt"]
+	path = includes/wingetopt
+	url = https://github.com/alex85k/wingetopt.git

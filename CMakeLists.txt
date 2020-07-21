@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_CXX_FLAGS_RELEASE"-O3")
 set(CMAKE_CXX_FLAGS_DEBUG"-Wall -Wextra -Wpedantic -ggdb")
+include_directories("${CMAKE_SOURCE_DIR}/includes/wingetopt/src")
 option(Comp_Type "Bool to determine wether to compile with debug or release options" OFF)
 install(TARGETS ultracalc DESTINATION /usr/bin)
 

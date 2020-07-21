@@ -4,7 +4,7 @@ s = "error"
 ss = "Type"
 loopbool = True
 wrong_art = """
-                             _______        
+                             _______
    _dMMMb._              .adOOOOOOOOOba.              _,dMMMb_
   dP'  ~YMMb            dOOOOOOOOOOOOOOOb            aMMP~  `Yb
   V      ~"Mb          dOOOOOOOOOOOOOOOOOb          dM"~      V
@@ -22,7 +22,7 @@ wrong_art = """
    YMb           ~YMMMM\`OOOOI`````IOOOOO'/MMMMP~           dMP
     `Mb.           `YMMMb`OOOI,,,,,IOOOO'dMMMP'           ,dM'
       `'                  `OObNNNNNdOO'                   `'
-                            `~OOOOO~'   
+                            `~OOOOO~'
 """
 
 
@@ -34,7 +34,6 @@ def add():
     addinput1 = input("What is the first addend ")
     addinput2 = input("What is the second addend ")
     addoutput = int(addinput1) + int(addinput2)
-
     print(str(addinput1) + " plus " + str(addinput2) + " = " + str(addoutput))
 
 
