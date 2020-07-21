@@ -1,12 +1,14 @@
-#include <iostream>
 #include <cmath>
+#define _USE_MATH_DEFINES
+#include <iostream>
 #include <string>
 #if defined(__unix__)
 #include <unistd.h>
 #else
-#include <includes/wingetopt/src/getopt.h>
+#include "includes/wingetopt/src/getopt.c"
+#define M_PI 3.14159265358979323846
 #endif
-#define _USE_MATH_DEFINES
+
 
 //Function selection char
 std::string symbol;
