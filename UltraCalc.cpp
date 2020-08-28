@@ -1,9 +1,10 @@
 #include <cmath>
-#define _USE_MATH_DEFINES
 #include <iostream>
 #include <string>
+//Checking if we are on Linux or windows, and including the appropriate things.
 #if defined(__unix__)
 #include <unistd.h>
+#define _USE_MATH_DEFINES
 #else
 #include "includes/wingetopt/src/getopt.c"
 #define M_PI 3.14159265358979323846
