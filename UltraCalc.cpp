@@ -271,6 +271,11 @@ void quad()
 //Interactive mode
 void interactive()
 {
+         /*
+	   Loop that takes user input and runs math functions accordingly.
+	   The loop repeats if the user wants to make another calculation, 
+	   and exits if they want to do something else.
+	 */
 	while (loop) {
 		//Getting user choice of function
 		std::cout << "Type q to quit\n";
@@ -285,7 +290,7 @@ void interactive()
 		std::cout << "Type qf for quadratic formula\n";
 		std::cout << "What would you like to do? ";
 		std::cin >> symbol;
-		//Compareing the input string to determine desired function
+		//Comparing the input string to determine desired function
 		if (symbol == "+") {
 			try {
 				add();
@@ -453,6 +458,7 @@ void printHelp()
 
 int main(int argc, char *argv[])
 {
+//Parsing command line options
 	switch (getopt(argc, argv, "asp/rhdmqiy")) {
 	case 'a':
 		add();
