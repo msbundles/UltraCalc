@@ -71,7 +71,7 @@ void sub()
 	}
 	catch (std::out_of_range) {
 		std::cout << "Your input was too large, please try again.\n";
-		exit(EXIT_FAILURE);
+       	     	exit(EXIT_FAILURE);
 	}
 	catch (std::invalid_argument) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
@@ -273,7 +273,7 @@ void interactive()
 {
          /*
 	   Loop that takes user input and runs math functions accordingly.
-	   The loop repeats if the user wants to make another calculation, 
+	   The loop repeats if the user wants to make another calculation,
 	   and exits if they want to do something else.
 	 */
 	while (loop) {
