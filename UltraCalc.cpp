@@ -41,8 +41,8 @@ void add()
 		std::cin >> in1;
 		std::cout << "What is the second addend? ";
 		std::cin >> in2;
-		double in1d = stof(returnPi(in1));
-		double in2d = stof(returnPi(in2));
+		double in1d = stod(returnPi(in1));
+		double in2d = stod(returnPi(in2));
 		std::cout << "The result is: " << in1d + in2d << std::endl;
 	}
 	//Catching out of range errors and handling them
@@ -65,8 +65,8 @@ void sub()
 		std::cin >> in1;
 		std::cout << "What is the subtrahend? ";
 		std::cin >> in2;
-		double in1d = stof(returnPi(in1));
-		double in2d = stof(returnPi(in2));
+		double in1d = stod(returnPi(in1));
+		double in2d = stod(returnPi(in2));
 		std::cout << "The result is: " << in1d - in2d << std::endl;
 	}
 	catch (std::out_of_range) {
@@ -87,8 +87,8 @@ void div()
 		std::cin >> in1;
 		std::cout << "What is the divisor? ";
 		std::cin >> in2;
-		double in1d = stof(returnPi(in1));
-		double in2d = stof(returnPi(in2));
+		double in1d = stod(returnPi(in1));
+		double in2d = stod(returnPi(in2));
 		std::cout << "The result is: " << in1d / in2d << std::endl;
 	}
 	catch (std::out_of_range) {
@@ -109,8 +109,8 @@ void mul()
 		std::cin >> in1;
 		std::cout << "What is the second factor? ";
 		std::cin >> in2;
-		double in1d = stof(returnPi(in1));
-		double in2d = stof(returnPi(in2));
+		double in1d = stod(returnPi(in1));
+		double in2d = stod(returnPi(in2));
 		std::cout << "The result is: " << in1d * in2d << std::endl;
 	}
 	catch (std::out_of_range) {
@@ -129,7 +129,7 @@ void sqr()
 	try {
 		std::cout << "What would you like to find the square root of? ";
 		std::cin >> in1;
-		double in1d = stof(returnPi(in1));
+		double in1d = stod(returnPi(in1));
 		std::cout << "The result is: " << sqrt(in1d) << std::endl;
 	}
 	catch (std::out_of_range) {
@@ -151,8 +151,8 @@ void hypote()
 		std::cin >> in1;
 		std::cout << "Leg 2: ";
 		std::cin >> in2;
-		double in1d = stof(returnPi(in1));
-		double in2d = stof(returnPi(in2));
+		double in1d = stod(returnPi(in1));
+		double in2d = stod(returnPi(in2));
 		std::cout << "The hypotenuse is " << hypot(in1d, in2d) << std::endl;
 	}
 	catch (std::out_of_range) {
@@ -182,10 +182,10 @@ void dist()
 		std::cin >> x2;
 		std::cout << "y2: ";
 		std::cin >> y2;
-		double x1d = stof(returnPi(x1));
-		double x2d = stof(returnPi(x2));
-		double y1d = stof(returnPi(y1));
-		double y2d = stof(returnPi(y2));
+		double x1d = stod(returnPi(x1));
+		double x2d = stod(returnPi(x2));
+		double y1d = stod(returnPi(y1));
+		double y2d = stod(returnPi(y2));
 		double x = x2d - x1d;
 		double y = y2d - y1d;
 		std::cout << "The distance between the points is " << sqrt(pow(x, 2) + pow(y, 2)) << std::endl;
@@ -217,10 +217,10 @@ void mid()
 		std::cin >> x2;
 		std::cout << "y2: ";
 		std::cin >> y2;
-		double x1d = stof(returnPi(x1));
-		double x2d = stof(returnPi(x2));
-		double y1d = stof(returnPi(y1));
-		double y2d = stof(returnPi(y2));
+		double x1d = stod(returnPi(x1));
+		double x2d = stod(returnPi(x2));
+		double y1d = stod(returnPi(y1));
+		double y2d = stod(returnPi(y2));
 		double x = x1d + x2d;
 		double y = y1d + y2d;
 		std::cout << "The the midpoint of the line segment is " << x / 2 << "," << y / 2 << std::endl;
@@ -249,9 +249,9 @@ void quad()
 		std::cin >> b;
 		std::cout << "c: ";
 		std::cin >> c;
-		double ad = stof(returnPi(a));
-		double bd = stof(returnPi(b));
-		double cd = stof(returnPi(c));
+		double ad = stod(returnPi(a));
+		double bd = stod(returnPi(b));
+		double cd = stod(returnPi(c));
 		double discrim = sqrt((pow(bd, 2)) - (4 * (ad * cd)));
 		double x1 = ((bd * -1) + discrim) / (ad * 2);
 		double x2 = ((bd * -1) - discrim) / (ad * 2);
