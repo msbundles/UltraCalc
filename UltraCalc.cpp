@@ -61,7 +61,7 @@ void add()
 void sub()
 {
 	try {
-	        std::cout << "What is the minuend? ";
+		std::cout << "What is the minuend? ";
 		std::cin >> in1;
 		std::cout << "What is the subtrahend? ";
 		std::cin >> in2;
@@ -71,7 +71,7 @@ void sub()
 	}
 	catch (std::out_of_range) {
 		std::cout << "Your input was too large, please try again.\n";
-       	     	exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	catch (std::invalid_argument) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
@@ -271,7 +271,7 @@ void quad()
 //Interactive mode
 void interactive()
 {
-         /*
+	 /*
 	   Loop that takes user input and runs math functions accordingly.
 	   The loop repeats if the user wants to make another calculation,
 	   and exits if they want to do something else.
