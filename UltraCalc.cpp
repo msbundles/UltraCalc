@@ -278,17 +278,17 @@ void interactive()
 	 */
 	while (loop) {
 		//Getting user choice of function
-		std::cout << "Type q to quit\n";
-		std::cout << "Type + to add\n";
-		std::cout << "Type - to subtract\n";
-		std::cout << "Type * to multiply\n";
-		std::cout << "Type / to divide\n";
-		std::cout << "Type s for square root\n";
-		std::cout << "Type h for hypotenuse\n";
-		std::cout << "Type d for distance formula\n";
-		std::cout << "Type m for midpoint formula\n";
-		std::cout << "Type qf for quadratic formula\n";
-		std::cout << "What would you like to do? ";
+		std::cout << "Type q to quit\n"
+			  << "Type + to add\n"
+			  << "Type - to subtract\n"
+			  << "Type * to multiply\n"
+			  << "Type / to divide\n"
+			  << "Type s for square root\n"
+			  << "Type h for hypotenuse\n"
+			  << "Type d for distance formula\n"
+			  << "Type m for midpoint formula\n"
+			  << "Type qf for quadratic formula\n"
+			  << "What would you like to do? ";
 		std::cin >> symbol;
 		//Comparing the input string to determine desired function
 		if (symbol == "+") {
