@@ -268,6 +268,52 @@ void quad()
 	}
 }
 
+//A function to find the range of side lenghts of triangles given the
+//two smallest sides.
+void trirange()
+{
+	try {
+		std::cout << "What is the first smallest side? ";
+		std::cin >> in1;
+		std::cout << "What is the second smallest side? ";
+		std::cin >> in2;
+		double in1d = stod(returnPi(in1));
+		double in2d = stod(returnPi(in2));
+		std::cout << "The top end of your range is: " << in1d + in2d << std::endl;
+		std::cout << "The bottom end of your range is: " << in1d - in2d << std::endl;
+	}
+	catch (std::out_of_range) {
+		std::cout << "Your input was too large, please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+	catch (std::invalid_argument) {
+		std::cout << "Your input contains letters or unknown symbols please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+}
+
+void thirdangle()
+{
+	try {
+		std::cout << "What is the measure of your first angle? ";
+		std::cin >> in1;
+		std::cout << "What is the measure of your second angle? ";
+		std::cin >> in2;
+		double in1d = stod(returnPi(in1));
+		double in2d = stod(returnPi(in2));
+		double sub = in1d + in2d;
+		std::cout << "The third angle of your triangle is: " << sub - 180 << std::endl;
+	}
+	catch (std::out_of_range) {
+		std::cout << "Your input was too large, please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+	catch (std::invalid_argument) {
+		std::cout << "Your input contains letters or unknown symbols please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+}
+
 //Interactive mode
 void interactive()
 {
@@ -288,6 +334,8 @@ void interactive()
 			  << "Type d for distance formula\n"
 			  << "Type m for midpoint formula\n"
 			  << "Type qf for quadratic formula\n"
+			  << "Type tr for triangle side-length range\n"
+			  << "Type ta for the third angle of a triangle\n"
 			  << "What would you like to do? ";
 		std::cin >> symbol;
 		//Comparing the input string to determine desired function
@@ -402,6 +450,30 @@ void interactive()
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
+		} else if (symbol == "tr") {
+			try {
+				trirange();
+			}
+			catch (std::out_of_range) {
+				std::cout << "Your input was too large, please try again.\n";
+				continue;
+			}
+			catch (std::invalid_argument) {
+				std::cout << "Your input contains letters or unknown symbols please try again.\n";
+				continue;
+			}
+		} else if (symbol == "ta") {
+			try {
+				thirdangle();
+			}
+			catch (std::out_of_range) {
+				std::cout << "Your input was too large, please try again.\n";
+				continue;
+			}
+			catch (std::invalid_argument) {
+				std::cout << "Your input contains letters or unknown symbols please try again.\n";
+				continue;
+			}
 		} else if (symbol == "q") {
 			break;
 		} else {
@@ -452,6 +524,8 @@ void printHelp()
 		  << "\t-d\tDistance formula\n"
 		  << "\t-m\tMidpoint formula\n"
 		  << "\t-q\tQuadratic formula\n"
+		  << "\t-n\tThird angle of a triangle\n"
+		  << "\t-t\tTriangle side-length range\n"
 		  << "\t-i\tInteractive mode\n"
 		  << "Replace a normal number input for 'pi'\nin order to utilize pi in your calculations.\n";
 }
@@ -459,7 +533,7 @@ void printHelp()
 int main(int argc, char *argv[])
 {
 //Parsing command line options
-	switch (getopt(argc, argv, "asp/rhdmqiy")) {
+	switch (getopt(argc, argv, "asp/rhdmqiynt")) {
 	case 'a':
 		add();
 		return 0;
@@ -498,6 +572,14 @@ int main(int argc, char *argv[])
 		break;
 	case 'i':
 		interactive();
+		return 0;
+		break;
+	case 'n':
+		thirdangle();
+		return 0;
+		break;
+	case 't':
+		trirange();
 		return 0;
 		break;
 	case 'h':
