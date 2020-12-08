@@ -302,7 +302,7 @@ void thirdangle()
 		double in1d = stod(returnPi(in1));
 		double in2d = stod(returnPi(in2));
 		double sub = in1d + in2d;
-		std::cout << "The third angle of your triangle is: " << sub - 180 << std::endl;
+		std::cout << "The third angle of your triangle is: " << fabs(sub - 180) << std::endl;
 	}
 	catch (std::out_of_range) {
 		std::cout << "Your input was too large, please try again.\n";
