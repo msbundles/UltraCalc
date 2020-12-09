@@ -10,7 +10,6 @@
 #define M_PI 3.14159265358979323846
 #endif
 
-
 //Function selection char
 std::string symbol;
 //Boolean for the loop
@@ -268,7 +267,7 @@ void quad()
 	}
 }
 
-//A function to find the range of side lenghts of triangles given the
+//A function to find the range of side lengths of triangles given the
 //two smallest sides.
 void trirange()
 {
