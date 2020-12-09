@@ -122,6 +122,8 @@ void mul()
 	}
 }
 
+//Secondary math functions
+
 //Square root function
 void sqr()
 {
@@ -291,6 +293,8 @@ void trirange()
 	}
 }
 
+//A function to find the third interior angle of a triangle when given
+//the other two angles.
 void thirdangle()
 {
 	try {
@@ -317,9 +321,10 @@ void thirdangle()
 void interactive()
 {
 	 /*
-	   Loop that takes user input and runs math functions accordingly.
-	   The loop repeats if the user wants to make another calculation,
-	   and exits if they want to do something else.
+	   The loop that takes user input and runs math functions
+	   accordingly. The loop repeats if the user wants to make
+	   another calculation, and exits if they want to do something
+	   else.
 	 */
 	while (loop) {
 		//Getting user choice of function
@@ -507,6 +512,7 @@ void interactive()
   -i = interactive mode
 */
 
+//Prints the help info
 void printHelp()
 {
 	std::cerr << "Usage: "
@@ -529,6 +535,7 @@ void printHelp()
 		  << "Replace a normal number input for 'pi'\nin order to utilize pi in your calculations.\n";
 }
 
+//The main function were command line arguments are parsed.
 int main(int argc, char *argv[])
 {
 //Parsing command line options
