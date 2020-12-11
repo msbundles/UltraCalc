@@ -281,7 +281,7 @@ void trirange()
 		double in1d = stod(returnPi(in1));
 		double in2d = stod(returnPi(in2));
 		std::cout << "The top end of your range is: " << in1d + in2d << std::endl;
-		std::cout << "The bottom end of your range is: " << in1d - in2d << std::endl;
+		std::cout << "The bottom end of your range is: " << fabs(in1d - in2d) << std::endl;
 	}
 	catch (std::out_of_range) {
 		std::cout << "Your input was too large, please try again.\n";
