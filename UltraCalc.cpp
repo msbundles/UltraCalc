@@ -17,6 +17,10 @@ bool loop = true;
 //Globals for the input strings, you could do it either way but this is less lines
 std::string in1;
 std::string in2;
+//Planck's constant for use in wave energy equations
+double planck = pow(6.626068, -34);
+//The speed of light for use in wave calculations
+double speedoflight = pow(2.99792458, 8);
 
 //Utility functions
 
@@ -313,6 +317,134 @@ void thirdangle()
 	}
 }
 
+//Wave calculations
+
+//Wavelength calculations
+
+//A function to get the wavelength of a wave from the energy of the wave
+void wlfromeng()
+{
+	try {
+		std::cout << "What is the energy of your wave? ";
+		std::cin >> in1;
+		double in1d = stod(returnPi(in1));
+		double ans = (speedoflight*planck)/in1d;
+		std::cout << "The wavelength of your wave is: " << ans << std::endl;
+	}
+	catch (std::out_of_range) {
+		std::cout << "Your input was too large, please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+	catch (std::invalid_argument) {
+		std::cout << "Your input contains letters or unknown symbols please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+}
+
+//A function to get the wavelength of a wave from the frequency of the wave
+void wlfromfrq()
+{
+	try {
+		std::cout << "What is the frequency of your wave? ";
+		std::cin >> in1;
+		double in1d = stod(returnPi(in1));
+		double ans = speedoflight/in1d;
+		std::cout << "The wavelength of your wave is: " << ans << std::endl;
+	}
+	catch (std::out_of_range) {
+		std::cout << "Your input was too large, please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+	catch (std::invalid_argument) {
+		std::cout << "Your input contains letters or unknown symbols please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+}
+
+//Frequency calculations
+
+//A function to get frequency from energy
+void frqfromeng()
+{
+	try {
+		std::cout << "What is the energy of your wave?";
+		std::cin >> in1;
+		double in1d = stod(returnPi(in1));
+		double ans = in1d/planck;
+		std::cout << "The frequency of your wave is: " << ans << std::endl;
+	}
+	catch (std::out_of_range) {
+		std::cout << "Your input was too large, please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+	catch (std::invalid_argument) {
+		std::cout << "Your input contains letters or unknown symbols please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+}
+
+//A function to get frequency from wavelength
+void frqfromwl()
+{
+	try {
+		std::cout << "What is the wavelength of your wave?";
+		std::cin >> in1;
+		double in1d = stod(returnPi(in1));
+		double ans = speedoflight/in1d;
+		std::cout << "The frequency of your wave is: " << ans << std::endl;
+	}
+	catch (std::out_of_range) {
+		std::cout << "Your input was too large, please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+	catch (std::invalid_argument) {
+		std::cout << "Your input contains letters or unknown symbols please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+}
+
+//Enegy calculations
+
+//A function to get energy from wavelength
+void engfromwl()
+{
+	try {
+		std::cout << "What is the wavelength of your wave?";
+		std::cin >> in1;
+		double in1d = stod(returnPi(in1));
+		double ans = (planck*speedoflight)/in1d;
+		std::cout << "The energy of your wave is: " << ans << std::endl;
+	}
+	catch (std::out_of_range) {
+		std::cout << "Your input was too large, please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+	catch (std::invalid_argument) {
+		std::cout << "Your input contains letters or unknown symbols please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+}
+
+//A function to get energy from frequency
+void engfromfrq()
+{
+	try {
+		std::cout << "What is the frequency of your wave?";
+		std::cin >> in1;
+		double in1d = stod(returnPi(in1));
+		double ans = planck*in1d;
+		std::cout << "The energy of your wave is: " << ans << std::endl;
+	}
+	catch (std::out_of_range) {
+		std::cout << "Your input was too large, please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+	catch (std::invalid_argument) {
+		std::cout << "Your input contains letters or unknown symbols please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+}
+
 //Interactive mode
 void interactive()
 {
@@ -335,6 +467,12 @@ void interactive()
 			  << "Type qf for quadratic formula\n"
 			  << "Type tr for triangle side-length range\n"
 			  << "Type ta for the third angle of a triangle\n"
+		          << "Type we for wavelength from energy\n"
+			  << "Type wf for wavelength from freqency\n"
+			  << "Type fe for frequency from energy\n"
+			  << "Type fw for frequency from wavelength\n"
+             		  << "Type ew for enegy from wavelength\n"
+		          << "Type ef for energy from frequency\n"
 			  << "What would you like to do? ";
 		std::cin >> symbol;
 		//Comparing the input string to determine desired function
@@ -472,8 +610,89 @@ void interactive()
 			catch (std::invalid_argument) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
+			} 
+		} else if (symbol == "we") {
+			try {
+				wlfromeng();
 			}
-		} else if (symbol == "q") {
+			catch (std::out_of_range) {
+				std::cout << "Your input was too large, please try again.\n";
+				continue;
+			}
+			catch (std::invalid_argument) {
+				std::cout << "Your input contains letters or unknown symbols please try again.\n";
+				continue;
+			}
+		} else if (symbol == "wf") {
+			try {
+				wlfromfrq();
+			}
+			catch (std::out_of_range) {
+				std::cout << "Your input was too large, please try again.\n";
+				continue;
+			}
+			catch (std::invalid_argument) {
+				std::cout << "Your input contains letters or unknown symbols please try again.\n";
+				continue;
+			}
+		} else if (symbol == "fe") {
+			try {
+				frqfromeng();
+			}
+			catch (std::out_of_range) {
+				std::cout << "Your input was too large, please try again.\n";
+				continue;
+			}
+			catch (std::invalid_argument) {
+				std::cout << "Your input contains letters or unknown symbols please try again.\n";
+				continue;
+			}
+		} else if (symbol == "fw") {
+			try {
+				frqfromwl();
+			}
+			catch (std::out_of_range) {
+				std::cout << "Your input was too large, please try again.\n";
+				continue;
+			}
+			catch (std::invalid_argument) {
+				std::cout << "Your input contains letters or unknown symbols please try again.\n";
+				continue;
+			}
+		} else if (symbol == "ew") {
+			try {
+				engfromwl();
+			}
+			catch (std::out_of_range) {
+				std::cout << "Your input was too large, please try again.\n";
+				continue;
+			}
+			catch (std::invalid_argument) {
+				std::cout << "Your input contains letters or unknown symbols please try again.\n";
+				continue;
+			}
+		} else if (symbol == "ef") {
+			try {
+				engfromfrq();
+			}
+			catch (std::out_of_range) {
+				std::cout << "Your input was too large, please try again.\n";
+				continue;
+			}
+			catch (std::invalid_argument) {
+				std::cout << "Your input contains letters or unknown symbols please try again.\n";
+				continue;
+			}
+		}
+
+
+
+
+
+
+
+
+		else if (symbol == "q") {
 			break;
 		} else {
 			//Input protection
