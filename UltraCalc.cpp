@@ -367,7 +367,7 @@ void wlfromfrq()
 void frqfromeng()
 {
 	try {
-		std::cout << "What is the energy of your wave?";
+		std::cout << "What is the energy of your wave? ";
 		std::cin >> in1;
 		double in1d = stod(returnPi(in1));
 		double ans = in1d/planck;
@@ -387,7 +387,7 @@ void frqfromeng()
 void frqfromwl()
 {
 	try {
-		std::cout << "What is the wavelength of your wave?";
+		std::cout << "What is the wavelength of your wave? ";
 		std::cin >> in1;
 		double in1d = stod(returnPi(in1));
 		double ans = speedoflight/in1d;
@@ -409,7 +409,7 @@ void frqfromwl()
 void engfromwl()
 {
 	try {
-		std::cout << "What is the wavelength of your wave?";
+		std::cout << "What is the wavelength of your wave? ";
 		std::cin >> in1;
 		double in1d = stod(returnPi(in1));
 		double ans = (planck*speedoflight)/in1d;
@@ -429,7 +429,7 @@ void engfromwl()
 void engfromfrq()
 {
 	try {
-		std::cout << "What is the frequency of your wave?";
+		std::cout << "What is the frequency of your wave? ";
 		std::cin >> in1;
 		double in1d = stod(returnPi(in1));
 		double ans = planck*in1d;
