@@ -736,6 +736,12 @@ void printHelp()
 		  << "\t-q\tQuadratic formula\n"
 		  << "\t-n\tThird angle of a triangle\n"
 		  << "\t-t\tTriangle side-length range\n"
+		  << "\t-e\tWavelength from energy\n"
+		  << "\t-f\tWavelength from frequency\n"
+		  << "\t-g\tFrequency from energy\n"
+		  << "\t-j\tFrequency from wavelength\n"
+		  << "\t-k\tEnergy from wavelength\n"
+		  << "\t-l\tEnergy from freqency\n"
 		  << "\t-i\tInteractive mode\n"
 		  << "All units for wave calculations are in meters and hertz\n"
 		  << "Replace a normal number input for 'pi'\nin order to utilize pi in your calculations.\n";
@@ -744,7 +750,7 @@ void printHelp()
 int main(int argc, char *argv[])
 {
 //Parsing command line options
-	switch (getopt(argc, argv, "asp/rhdmqiynt")) {
+	switch (getopt(argc, argv, "asp/rhdmqiyntefgjklo")) {
 	case 'a':
 		add();
 		return 0;
@@ -781,16 +787,40 @@ int main(int argc, char *argv[])
 		quad();
 		return 0;
 		break;
-	case 'i':
-		interactive();
-		return 0;
-		break;
 	case 'n':
 		thirdangle();
 		return 0;
 		break;
 	case 't':
 		trirange();
+		return 0;
+		break;
+	case 'e':
+		wlfromeng();
+		return 0;
+		break;
+	case 'f':
+		wlfromfrq();
+		return 0;
+		break;
+	case 'g':
+		frqfromeng();
+		return 0;
+		break;
+	case 'j':
+		frqfromwl();
+		return 0;
+		break;
+	case 'k':
+		engfromwl();
+		return 0;
+		break;
+	case 'l':
+		engfromfrq();
+		return 0;
+		break;
+	case 'i':
+		interactive();
 		return 0;
 		break;
 	case 'h':
