@@ -467,13 +467,15 @@ void interactive()
 			  << "Type qf for quadratic formula\n"
 			  << "Type tr for triangle side-length range\n"
 			  << "Type ta for the third angle of a triangle\n"
-                          << "All units for wave calculations are in meters and hertz\n"
 			  << "Type we for wavelength from energy\n"
 			  << "Type wf for wavelength from freqency\n"
 			  << "Type fe for frequency from energy\n"
 			  << "Type fw for frequency from wavelength\n"
              		  << "Type ew for enegy from wavelength\n"
 		          << "Type ef for energy from frequency\n"
+                          << "All units for wave calculations are in meters and hertz\n"
+			  << "If you would like to use scientific notation in your calculations\n"
+			  << "then use an e. An example would be, 6*10^11, would be 6e11\n"
 			  << "What would you like to do? ";
 		std::cin >> symbol;
 		//Comparing the input string to determine desired function
@@ -744,6 +746,8 @@ void printHelp()
 		  << "\t-l\tEnergy from freqency\n"
 		  << "\t-i\tInteractive mode\n"
 		  << "All units for wave calculations are in meters and hertz\n"
+		  << "If you would like to use scientific notation in your calculations\n"
+		  << "then use an e. An example would be, 6*10^11, would be 6e11\n"
 		  << "Replace a normal number input for 'pi'\nin order to utilize pi in your calculations.\n";
 }
 
