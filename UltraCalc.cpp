@@ -18,9 +18,9 @@ bool loop = true;
 std::string in1;
 std::string in2;
 //Planck's constant for use in wave energy equations
-double planck = pow(6.626068, -34);
+double planck = pow(6.626, -34);
 //The speed of light for use in wave calculations
-double speedoflight = pow(2.99792458, 8);
+double speedoflight = pow(3, 8);
 
 //Utility functions
 
