@@ -18,9 +18,9 @@ bool loop = true;
 std::string in1;
 std::string in2;
 //Planck's constant for use in wave energy equations
-double planck = pow(6.626, -34);
+double planck = 6.626068*pow(10,-34);
 //The speed of light for use in wave calculations
-double speedoflight = pow(3, 8);
+double speedoflight = 2.99792458*pow(10,8);
 
 //Utility functions
 
@@ -467,7 +467,8 @@ void interactive()
 			  << "Type qf for quadratic formula\n"
 			  << "Type tr for triangle side-length range\n"
 			  << "Type ta for the third angle of a triangle\n"
-		          << "Type we for wavelength from energy\n"
+                          << "All units for wave calculations are in meters and hertz\n"
+			  << "Type we for wavelength from energy\n"
 			  << "Type wf for wavelength from freqency\n"
 			  << "Type fe for frequency from energy\n"
 			  << "Type fw for frequency from wavelength\n"
@@ -736,6 +737,7 @@ void printHelp()
 		  << "\t-n\tThird angle of a triangle\n"
 		  << "\t-t\tTriangle side-length range\n"
 		  << "\t-i\tInteractive mode\n"
+		  << "All units for wave calculations are in meters and hertz\n"
 		  << "Replace a normal number input for 'pi'\nin order to utilize pi in your calculations.\n";
 }
 
