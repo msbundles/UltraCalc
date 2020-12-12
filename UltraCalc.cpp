@@ -683,16 +683,7 @@ void interactive()
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
-		}
-
-
-
-
-
-
-
-
-		else if (symbol == "q") {
+		} else if (symbol == "q") {
 			break;
 		} else {
 			//Input protection
