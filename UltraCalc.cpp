@@ -778,7 +778,7 @@ void printHelp()
 		  << "\t-i\tInteractive mode\n"
 		  << "All units for wave calculations are in meters and hertz\n"
 		  << "If you would like to use scientific notation in your calculations\n"
-		  << "then use an e. An example would be, 6*10^11, would be 6e11\n"
+		  << "then use an e. An example would be, 6*10^11, would be 6e11.\n"
 		  << "Replace a normal number input for 'pi'\nin order to utilize pi in your calculations.\n";
 }
 
