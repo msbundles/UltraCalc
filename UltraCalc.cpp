@@ -14,9 +14,6 @@
 std::string symbol;
 //Boolean for the loop
 bool loop = true;
-//Globals for the input strings, you could do it either way but this is less lines
-std::string in1;
-std::string in2;
 //Planck's constant for use in wave energy equations
 double planck = 6.626068*pow(10,-34);
 //The speed of light for use in wave calculations
@@ -39,6 +36,8 @@ std::string returnPi(std::string in)
 //Addition function
 void add()
 {
+	std::string in1;
+	std::string in2;
 	try {
 		std::cout << "What is the first addend? ";
 		std::cin >> in1;
@@ -63,6 +62,8 @@ void add()
 //Subtraction function
 void sub()
 {
+	std::string in1;
+	std::string in2;
 	try {
 		std::cout << "What is the minuend? ";
 		std::cin >> in1;
@@ -85,6 +86,8 @@ void sub()
 //Division function
 void div()
 {
+	std::string in1;
+	std::string in2;
 	try {
 		std::cout << "What is the dividend? ";
 		std::cin >> in1;
@@ -107,6 +110,8 @@ void div()
 //Multiplication function
 void mul()
 {
+	std::string in1;
+	std::string in2;
 	try {
 		std::cout << "What is the first factor? ";
 		std::cin >> in1;
@@ -131,6 +136,8 @@ void mul()
 //Square root function
 void sqr()
 {
+	std::string in1;
+	std::string in2;
 	try {
 		std::cout << "What would you like to find the square root of? ";
 		std::cin >> in1;
@@ -150,6 +157,8 @@ void sqr()
 //Hypotenuse function
 void hypote()
 {
+	std::string in1;
+	std::string in2;
 	try {
 		std::cout << "Input the legs of a right triangle in order to find the hypotenuse\n";
 		std::cout << "Leg 1: ";
@@ -277,6 +286,8 @@ void quad()
 //two smallest sides.
 void trirange()
 {
+	std::string in1;
+	std::string in2;
 	try {
 		std::cout << "What is the first smallest side? ";
 		std::cin >> in1;
@@ -301,6 +312,8 @@ void trirange()
 //the other two angles.
 void thirdangle()
 {
+	std::string in1;
+	std::string in2;
 	try {
 		std::cout << "What is the measure of your first angle? ";
 		std::cin >> in1;
@@ -328,6 +341,8 @@ void thirdangle()
 //A function to get the wavelength of a wave from the energy of the wave
 void wlfromeng()
 {
+	std::string in1;
+	std::string in2;
 	try {
 		std::cout << "What is the energy of your wave? ";
 		std::cin >> in1;
@@ -348,6 +363,8 @@ void wlfromeng()
 //A function to get the wavelength of a wave from the frequency of the wave
 void wlfromfrq()
 {
+	std::string in1;
+	std::string in2;
 	try {
 		std::cout << "What is the frequency of your wave? ";
 		std::cin >> in1;
@@ -370,6 +387,8 @@ void wlfromfrq()
 //A function to get frequency from energy
 void frqfromeng()
 {
+	std::string in1;
+	std::string in2;
 	try {
 		std::cout << "What is the energy of your wave? ";
 		std::cin >> in1;
@@ -390,6 +409,8 @@ void frqfromeng()
 //A function to get frequency from wavelength
 void frqfromwl()
 {
+	std::string in1;
+	std::string in2;
 	try {
 		std::cout << "What is the wavelength of your wave? ";
 		std::cin >> in1;
@@ -412,6 +433,8 @@ void frqfromwl()
 //A function to get energy from wavelength
 void engfromwl()
 {
+	std::string in1;
+	std::string in2;
 	try {
 		std::cout << "What is the wavelength of your wave? ";
 		std::cin >> in1;
@@ -432,6 +455,8 @@ void engfromwl()
 //A function to get energy from frequency
 void engfromfrq()
 {
+	std::string in1;
+	std::string in2;
 	try {
 		std::cout << "What is the frequency of your wave? ";
 		std::cin >> in1;
