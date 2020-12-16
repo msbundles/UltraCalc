@@ -482,15 +482,17 @@ void tempconvert()
 	std::string in2;
 	try {
 		std::cout << "Type fc to convert from Fahrenheit to Celsius.\n"
-			  << "Type cf to convert from Celsius to Fahrenheit.\n";
+			  << "Type cf to convert from Celsius to Fahrenheit.\n"
+                 	  << ":";
 		std::cin >> in1;
 		std::cout << "Please input the temp you would like to convert: ";
 		std::cin >> in2;
 		double in2d = stod(returnPi(in2));
+		double out;
 		if (in1 == "cf") {
-			double out = (in2d*1.8) + 32;
+			out = (in2d*1.8) + 32;
 		} else if (in1 == "fc") {
-			double out = (in2d-32) / 1.8;
+			out = (in2d-32) / 1.8;
 		}
 		std::cout << "The result is: " << out << std::endl;
 	}
@@ -535,6 +537,7 @@ void interactive()
 			  << "Type fw for wavelength to frequency\n"
              		  << "Type ew for wavelength to energy\n"
 		          << "Type ef for frequency to energy\n"
+			  << "Type tc for temperature conversion\n"
                           << "All units for wave calculations are in meters and hertz\n"
 			  << "If you would like to use scientific notation in your calculations\n"
 			  << "then use an e. An example would be, 6*10^11, would be 6e11\n"
@@ -748,6 +751,18 @@ void interactive()
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
+		} else if (symbol == "tc") {
+			try {
+				tempconvert();
+			}
+			catch (std::out_of_range) {
+				std::cout << "Your input was too large, please try again.\n";
+				continue;
+			}
+			catch (std::invalid_argument) {
+				std::cout << "Your input contains letters or unknown symbols please try again.\n";
+				continue;
+			}
 		} else if (symbol == "q") {
 			break;
 		} else {
@@ -807,6 +822,7 @@ void printHelp()
 		  << "\t-j\tWavelength to frequency\n"
 		  << "\t-k\tWavelength to energy\n"
 		  << "\t-l\tFrequency to energy\n"
+		  << "\t-c\tTemperature conversion\n"
 		  << "\t-i\tInteractive mode\n"
 		  << "All units for wave calculations are in meters and hertz\n"
 		  << "If you would like to use scientific notation in your calculations\n"
@@ -818,7 +834,7 @@ void printHelp()
 int main(int argc, char *argv[])
 {
 //Parsing command line options
-	switch (getopt(argc, argv, "asp/rhdmqiyntefgjklo")) {
+	switch (getopt(argc, argv, "asp/rhdmqiyntefgjkloc")) {
 	case 'a':
 		add();
 		return 0;
@@ -885,6 +901,10 @@ int main(int argc, char *argv[])
 		break;
 	case 'l':
 		engfromfrq();
+		return 0;
+		break;
+	case 'c':
+		tempconvert();
 		return 0;
 		break;
 	case 'i':
