@@ -474,6 +474,38 @@ void engfromfrq()
 	}
 }
 
+//A function to convert Fahrenheit to Celsius and visa versa
+
+void tempconvert()
+{
+	std::string in1;
+	std::string in2;
+	try {
+		std::cout << "Type fc to convert from Fahrenheit to Celsius.\n"
+			  << "Type cf to convert from Celsius to Fahrenheit.\n";
+		std::cin >> in1;
+		std::cout << "Please input the temp you would like to convert: ";
+		std::cin >> in2;
+		double in2d = stod(returnPi(in2));
+		if (in1 == "cf") {
+			double out = (in2d*1.8) + 32;
+		} else if (in1 == "fc") {
+			double out = (in2d-32) / 1.8;
+		}
+		std::cout << "The result is: " << out << std::endl;
+	}
+	//Catching out of range errors and handling them
+	catch (std::out_of_range) {
+		std::cout << "Your input was too large, please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+	//Catching invalid argument errors and handling them
+	catch (std::invalid_argument) {
+		std::cout << "Your input contains letters or unknown symbols please try again.\n";
+		exit(EXIT_FAILURE);
+	}
+}
+
 //Interactive mode
 void interactive()
 {
