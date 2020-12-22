@@ -785,16 +785,28 @@ void interactive()
 //CLI Functions
 /*
   CLI argument associations
-  -h = help
-  -a = add
-  -s = subtract
-  -p = multiply
-  -/ = divide
-  -r = square root
-  -d = distance formula
-  -m = midpoint formula
-  -q = quadratic formula
-  -i = interactive mode
+  | Letter | Function                   |
+  |--------+----------------------------|
+  | -h     | Help                       |
+  | -a     | Add                        |
+  | -s     | Subtract                   |
+  | -p     | Multiply                   |
+  | -/     | Divide                     |
+  | -r     | Square Root                |
+  | -y     | Hypotenuse                 |
+  | -d     | Distance Formula           |
+  | -m     | Midpoint Formula           |
+  | -q     | Quadratic Formula          |
+  | -n     | Third angle of a triangle  |
+  | -t     | Triangle side-length range |
+  | -e     | Energy to wavelength       |
+  | -f     | Frequency to wavelength    |
+  | -g     | Energy to frequency        |
+  | -j     | Wavelength to frequency    |
+  | -k     | Wavelength to energy       |
+  | -l     | Frequency to energy        |
+  | -c     | Temperature conversion     |
+  | -i     | Interactive mode           |
 */
 
 //Prints the help info
