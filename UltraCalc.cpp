@@ -491,10 +491,12 @@ void tempconvert()
 		double out;
 		if (in1 == "cf") {
 			out = (in2d*1.8) + 32;
+			std::cout << "The result is: " << out << " degrees Fahrenheit" << std::endl;
 		} else if (in1 == "fc") {
 			out = (in2d-32) / 1.8;
+			std::cout << "The result is: " << out << " degrees Celsius" << std::endl;
 		}
-		std::cout << "The result is: " << out << std::endl;
+		
 	}
 	//Catching out of range errors and handling them
 	catch (std::out_of_range) {
