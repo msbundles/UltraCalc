@@ -10,14 +10,10 @@
 #define M_PI 3.14159265358979323846
 #endif
 
-//Function selection char
-std::string symbol;
-//Boolean for the loop
-bool loop = true;
 //Planck's constant for use in wave energy equations
-double planck = 6.626068*pow(10,-34);
+const double planck = 6.626068*pow(10,-34);
 //The speed of light for use in wave calculations
-double speedoflight = 2.99792458*pow(10,8);
+const double speedoflight = 2.99792458*pow(10,8);
 
 //Utility functions
 
@@ -519,9 +515,15 @@ void interactive()
 	   another calculation, and exits if they want to do something
 	   else.
 	 */
+	
+	bool loop = true;
+
+	//Function selection string
+	std::string symbol;
+
 	while (loop) {
 		//Getting user choice of function
-		std::cout << "Type q to quit\n"
+		std::cout << "\nType q to quit\n"
 			  << "Type + to add\n"
 			  << "Type - to subtract\n"
 			  << "Type * to multiply\n"
