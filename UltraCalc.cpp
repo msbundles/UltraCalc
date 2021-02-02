@@ -14,15 +14,19 @@
 const double planck = 6.626068*pow(10,-34);
 //The speed of light for use in wave calculations
 const double speedoflight = 2.99792458*pow(10,8);
+//Avagadro's number
+const double mole = 6.02*pow(10,23);
 
 //Utility functions
 
-//Returns the value of pi if the user inputs the string "pi"
-std::string returnPi(std::string in)
+//This function injects a number into a equation if a certian string is given.
+std::string valueInjector(std::string in)
 {
 	std::string pi = std::to_string(M_PI);
 	if (in == "pi") {
 		return pi;
+	} else if (in == "mole") {
+		return std::to_string(mole);
 	} else
 		return in;
 }
@@ -39,8 +43,8 @@ void add()
 		std::cin >> in1;
 		std::cout << "What is the second addend? ";
 		std::cin >> in2;
-		double in1d = stod(returnPi(in1));
-		double in2d = stod(returnPi(in2));
+		double in1d = stod(valueInjector(in1));
+		double in2d = stod(valueInjector(in2));
 		std::cout << "The result is: " << in1d + in2d << std::endl;
 	}
 	//Catching out of range errors and handling them
@@ -65,8 +69,8 @@ void sub()
 		std::cin >> in1;
 		std::cout << "What is the subtrahend? ";
 		std::cin >> in2;
-		double in1d = stod(returnPi(in1));
-		double in2d = stod(returnPi(in2));
+		double in1d = stod(valueInjector(in1));
+		double in2d = stod(valueInjector(in2));
 		std::cout << "The result is: " << in1d - in2d << std::endl;
 	}
 	catch (std::out_of_range) {
@@ -89,8 +93,8 @@ void div()
 		std::cin >> in1;
 		std::cout << "What is the divisor? ";
 		std::cin >> in2;
-		double in1d = stod(returnPi(in1));
-		double in2d = stod(returnPi(in2));
+		double in1d = stod(valueInjector(in1));
+		double in2d = stod(valueInjector(in2));
 		std::cout << "The result is: " << in1d / in2d << std::endl;
 	}
 	catch (std::out_of_range) {
@@ -113,8 +117,8 @@ void mul()
 		std::cin >> in1;
 		std::cout << "What is the second factor? ";
 		std::cin >> in2;
-		double in1d = stod(returnPi(in1));
-		double in2d = stod(returnPi(in2));
+		double in1d = stod(valueInjector(in1));
+		double in2d = stod(valueInjector(in2));
 		std::cout << "The result is: " << in1d * in2d << std::endl;
 	}
 	catch (std::out_of_range) {
@@ -137,7 +141,7 @@ void sqr()
 	try {
 		std::cout << "What would you like to find the square root of? ";
 		std::cin >> in1;
-		double in1d = stod(returnPi(in1));
+		double in1d = stod(valueInjector(in1));
 		std::cout << "The result is: " << sqrt(in1d) << std::endl;
 	}
 	catch (std::out_of_range) {
@@ -161,8 +165,8 @@ void hypote()
 		std::cin >> in1;
 		std::cout << "Leg 2: ";
 		std::cin >> in2;
-		double in1d = stod(returnPi(in1));
-		double in2d = stod(returnPi(in2));
+		double in1d = stod(valueInjector(in1));
+		double in2d = stod(valueInjector(in2));
 		std::cout << "The hypotenuse is " << hypot(in1d, in2d) << std::endl;
 	}
 	catch (std::out_of_range) {
@@ -192,10 +196,10 @@ void dist()
 		std::cin >> x2;
 		std::cout << "y2: ";
 		std::cin >> y2;
-		double x1d = stod(returnPi(x1));
-		double x2d = stod(returnPi(x2));
-		double y1d = stod(returnPi(y1));
-		double y2d = stod(returnPi(y2));
+		double x1d = stod(valueInjector(x1));
+		double x2d = stod(valueInjector(x2));
+		double y1d = stod(valueInjector(y1));
+		double y2d = stod(valueInjector(y2));
 		double x = x2d - x1d;
 		double y = y2d - y1d;
 		std::cout << "The distance between the points is " << sqrt(pow(x, 2) + pow(y, 2)) << std::endl;
@@ -227,10 +231,10 @@ void mid()
 		std::cin >> x2;
 		std::cout << "y2: ";
 		std::cin >> y2;
-		double x1d = stod(returnPi(x1));
-		double x2d = stod(returnPi(x2));
-		double y1d = stod(returnPi(y1));
-		double y2d = stod(returnPi(y2));
+		double x1d = stod(valueInjector(x1));
+		double x2d = stod(valueInjector(x2));
+		double y1d = stod(valueInjector(y1));
+		double y2d = stod(valueInjector(y2));
 		double x = x1d + x2d;
 		double y = y1d + y2d;
 		std::cout << "The the midpoint of the line segment is " << x / 2 << "," << y / 2 << std::endl;
@@ -259,9 +263,9 @@ void quad()
 		std::cin >> b;
 		std::cout << "c: ";
 		std::cin >> c;
-		double ad = stod(returnPi(a));
-		double bd = stod(returnPi(b));
-		double cd = stod(returnPi(c));
+		double ad = stod(valueInjector(a));
+		double bd = stod(valueInjector(b));
+		double cd = stod(valueInjector(c));
 		double discrim = sqrt((pow(bd, 2)) - (4 * (ad * cd)));
 		double x1 = ((bd * -1) + discrim) / (ad * 2);
 		double x2 = ((bd * -1) - discrim) / (ad * 2);
@@ -289,8 +293,8 @@ void trirange()
 		std::cin >> in1;
 		std::cout << "What is the second smallest side? ";
 		std::cin >> in2;
-		double in1d = stod(returnPi(in1));
-		double in2d = stod(returnPi(in2));
+		double in1d = stod(valueInjector(in1));
+		double in2d = stod(valueInjector(in2));
 		std::cout << "The top end of your range is: " << in1d + in2d << std::endl;
 		std::cout << "The bottom end of your range is: " << fabs(in1d - in2d) << std::endl;
 	}
@@ -315,8 +319,8 @@ void thirdangle()
 		std::cin >> in1;
 		std::cout << "What is the measure of your second angle? ";
 		std::cin >> in2;
-		double in1d = stod(returnPi(in1));
-		double in2d = stod(returnPi(in2));
+		double in1d = stod(valueInjector(in1));
+		double in2d = stod(valueInjector(in2));
 		double sub = in1d + in2d;
 		std::cout << "The third angle of your triangle is: " << fabs(sub - 180) << std::endl;
 	}
@@ -342,7 +346,7 @@ void wlfromeng()
 	try {
 		std::cout << "What is the energy of your wave? ";
 		std::cin >> in1;
-		double in1d = stod(returnPi(in1));
+		double in1d = stod(valueInjector(in1));
 		double ans = (speedoflight*planck)/in1d;
 		std::cout << "The wavelength of your wave is: " << ans << std::endl;
 	}
@@ -364,7 +368,7 @@ void wlfromfrq()
 	try {
 		std::cout << "What is the frequency of your wave? ";
 		std::cin >> in1;
-		double in1d = stod(returnPi(in1));
+		double in1d = stod(valueInjector(in1));
 		double ans = speedoflight/in1d;
 		std::cout << "The wavelength of your wave is: " << ans << std::endl;
 	}
@@ -388,7 +392,7 @@ void frqfromeng()
 	try {
 		std::cout << "What is the energy of your wave? ";
 		std::cin >> in1;
-		double in1d = stod(returnPi(in1));
+		double in1d = stod(valueInjector(in1));
 		double ans = in1d/planck;
 		std::cout << "The frequency of your wave is: " << ans << std::endl;
 	}
@@ -410,7 +414,7 @@ void frqfromwl()
 	try {
 		std::cout << "What is the wavelength of your wave? ";
 		std::cin >> in1;
-		double in1d = stod(returnPi(in1));
+		double in1d = stod(valueInjector(in1));
 		double ans = speedoflight/in1d;
 		std::cout << "The frequency of your wave is: " << ans << std::endl;
 	}
@@ -434,7 +438,7 @@ void engfromwl()
 	try {
 		std::cout << "What is the wavelength of your wave? ";
 		std::cin >> in1;
-		double in1d = stod(returnPi(in1));
+		double in1d = stod(valueInjector(in1));
 		double ans = (planck*speedoflight)/in1d;
 		std::cout << "The energy of your wave is: " << ans << std::endl;
 	}
@@ -456,7 +460,7 @@ void engfromfrq()
 	try {
 		std::cout << "What is the frequency of your wave? ";
 		std::cin >> in1;
-		double in1d = stod(returnPi(in1));
+		double in1d = stod(valueInjector(in1));
 		double ans = planck*in1d;
 		std::cout << "The energy of your wave is: " << ans << std::endl;
 	}
@@ -483,7 +487,7 @@ void tempconvert()
 		std::cin >> in1;
 		std::cout << "Please input the temp you would like to convert: ";
 		std::cin >> in2;
-		double in2d = stod(returnPi(in2));
+		double in2d = stod(valueInjector(in2));
 		double out;
 		if (in1 == "cf") {
 			out = (in2d*1.8) + 32;
