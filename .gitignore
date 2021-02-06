@@ -281,3 +281,4 @@ flycheck_*.el
 
 
 # End of https://www.toptal.com/developers/gitignore/api/code,cmake,linux,c++,python,git
+/TAGS
