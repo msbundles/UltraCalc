@@ -11,11 +11,11 @@
 #endif
 
 //Planck's constant for use in wave energy equations
-const double planck = 6.626068*pow(10,-34);
+const double planck = 6.62607015*pow(10,-34);
 //The speed of light for use in wave calculations
 const double speedoflight = 2.99792458*pow(10,8);
 //Avagadro's number
-const double mole = 6.022*pow(10,23);
+const double mole = 6.02214076*pow(10,23);
 
 //Utility functions
 
