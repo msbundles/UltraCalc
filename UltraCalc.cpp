@@ -844,10 +844,11 @@ void printHelp()
 		  << "\t-l\tFrequency to energy\n"
 		  << "\t-c\tTemperature conversion\n"
 		  << "\t-i\tInteractive mode\n"
-		  << "All units for wave calculations are in meters and hertz\n"
+		  << "All units for wave calculations are in meters and hertz.\n"
 		  << "If you would like to use scientific notation in your calculations\n"
-		  << "then use an e. An example would be, 6*10^11, would be 6e11.\n"
-		  << "Replace a normal number input for 'pi'\nin order to utilize pi in your calculations.\n";
+		  << "then use an e. For instance, 6*10^11, would be 6e11.\n"
+		  << "Replace a normal number input for 'pi'\nin order to utilize pi in your calculations.\n"
+		  << "Replace a normal number input for 'mole'\nin order to utilize Avagadro's number in your calculations.\n";
 }
 
 //The main function were command line arguments are parsed.
