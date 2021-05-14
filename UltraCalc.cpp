@@ -48,12 +48,12 @@ void add()
 		std::cout << "The result is: " << in1d + in2d << std::endl;
 	}
 	//Catching out of range errors and handling them
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
 	//Catching invalid argument errors and handling them
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -73,11 +73,11 @@ void sub()
 		double in2d = stod(valueInjector(in2));
 		std::cout << "The result is: " << in1d - in2d << std::endl;
 	}
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -97,11 +97,11 @@ void div()
 		double in2d = stod(valueInjector(in2));
 		std::cout << "The result is: " << in1d / in2d << std::endl;
 	}
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -121,11 +121,11 @@ void mul()
 		double in2d = stod(valueInjector(in2));
 		std::cout << "The result is: " << in1d * in2d << std::endl;
 	}
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -144,11 +144,11 @@ void sqr()
 		double in1d = stod(valueInjector(in1));
 		std::cout << "The result is: " << sqrt(in1d) << std::endl;
 	}
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -169,11 +169,11 @@ void hypote()
 		double in2d = stod(valueInjector(in2));
 		std::cout << "The hypotenuse is " << hypot(in1d, in2d) << std::endl;
 	}
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -204,11 +204,11 @@ void dist()
 		double y = y2d - y1d;
 		std::cout << "The distance between the points is " << sqrt(pow(x, 2) + pow(y, 2)) << std::endl;
 	}
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -239,11 +239,11 @@ void mid()
 		double y = y1d + y2d;
 		std::cout << "The the midpoint of the line segment is " << x / 2 << "," << y / 2 << std::endl;
 	}
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -272,11 +272,11 @@ void quad()
 		std::cout << "Your first solution is " << x1 << std::endl;
 		std::cout << "Your second solution is " << x2 << std::endl;
 	}
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -298,11 +298,11 @@ void trirange()
 		std::cout << "The top end of your range is: " << in1d + in2d << std::endl;
 		std::cout << "The bottom end of your range is: " << fabs(in1d - in2d) << std::endl;
 	}
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -324,11 +324,11 @@ void thirdangle()
 		double sub = in1d + in2d;
 		std::cout << "The third angle of your triangle is: " << fabs(sub - 180) << std::endl;
 	}
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -350,11 +350,11 @@ void wlfromeng()
 		double ans = (speedoflight*planck)/in1d;
 		std::cout << "The wavelength of your wave is: " << ans << std::endl;
 	}
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -372,11 +372,11 @@ void wlfromfrq()
 		double ans = speedoflight/in1d;
 		std::cout << "The wavelength of your wave is: " << ans << std::endl;
 	}
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -396,11 +396,11 @@ void frqfromeng()
 		double ans = in1d/planck;
 		std::cout << "The frequency of your wave is: " << ans << std::endl;
 	}
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -418,11 +418,11 @@ void frqfromwl()
 		double ans = speedoflight/in1d;
 		std::cout << "The frequency of your wave is: " << ans << std::endl;
 	}
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -442,11 +442,11 @@ void engfromwl()
 		double ans = (planck*speedoflight)/in1d;
 		std::cout << "The energy of your wave is: " << ans << std::endl;
 	}
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -464,11 +464,11 @@ void engfromfrq()
 		double ans = planck*in1d;
 		std::cout << "The energy of your wave is: " << ans << std::endl;
 	}
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -499,12 +499,12 @@ void tempconvert()
 		
 	}
 	//Catching out of range errors and handling them
-	catch (std::out_of_range) {
+	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
 		exit(EXIT_FAILURE);
 	}
 	//Catching invalid argument errors and handling them
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument const&) {
 		std::cout << "Your input contains letters or unknown symbols please try again.\n";
 		exit(EXIT_FAILURE);
 	}
@@ -556,11 +556,11 @@ void interactive()
 			try {
 				add();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
@@ -568,11 +568,11 @@ void interactive()
 			try {
 				sub();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
@@ -580,11 +580,11 @@ void interactive()
 			try {
 				mul();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
@@ -592,11 +592,11 @@ void interactive()
 			try {
 				div();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
@@ -604,11 +604,11 @@ void interactive()
 			try {
 				sqr();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
@@ -616,11 +616,11 @@ void interactive()
 			try {
 				hypote();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
@@ -629,12 +629,12 @@ void interactive()
 			{
 				dist();
 			}
-			catch (std::out_of_range)
+			catch (std::out_of_range const&)
 			{
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument)
+			catch (std::invalid_argument const&)
 			{
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
@@ -643,11 +643,11 @@ void interactive()
 			try {
 				mid();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
@@ -655,11 +655,11 @@ void interactive()
 			try {
 				quad();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
@@ -667,11 +667,11 @@ void interactive()
 			try {
 				trirange();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
@@ -679,11 +679,11 @@ void interactive()
 			try {
 				thirdangle();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			} 
@@ -691,11 +691,11 @@ void interactive()
 			try {
 				wlfromeng();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
@@ -703,11 +703,11 @@ void interactive()
 			try {
 				wlfromfrq();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
@@ -715,11 +715,11 @@ void interactive()
 			try {
 				frqfromeng();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
@@ -727,11 +727,11 @@ void interactive()
 			try {
 				frqfromwl();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
@@ -739,11 +739,11 @@ void interactive()
 			try {
 				engfromwl();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
@@ -751,11 +751,11 @@ void interactive()
 			try {
 				engfromfrq();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
@@ -763,11 +763,11 @@ void interactive()
 			try {
 				tempconvert();
 			}
-			catch (std::out_of_range) {
+			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
 				continue;
 			}
-			catch (std::invalid_argument) {
+			catch (std::invalid_argument const&) {
 				std::cout << "Your input contains letters or unknown symbols please try again.\n";
 				continue;
 			}
