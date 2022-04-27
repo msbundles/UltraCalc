@@ -10,6 +10,8 @@ const double planck = 6.62607015*pow(10,-34);
 const double speedoflight = 2.99792458*pow(10,8);
 //Avagadro's number
 const double mole = 6.02214076*pow(10,23);
+//The var that stores the last answer.
+double answer = 0;
 
 //Utility functions
 
@@ -21,14 +23,18 @@ std::string valueInjector(std::string in)
 		return pi;
 	} else if (in == "mole") {
 		return std::to_string(mole);
-	} else
+	} else if (in == "ans") {
+		std::cout << "ANS WORKS";
+		return std::to_string(answer);
+	} else {
 		return in;
+	}
 }
 
 //Arithmetic functions
 
 //Addition function
-void add()
+double add()
 {
 	std::string in1;
 	std::string in2;
@@ -39,7 +45,9 @@ void add()
 		std::cin >> in2;
 		double in1d = stod(valueInjector(in1));
 		double in2d = stod(valueInjector(in2));
-		std::cout << "The result is: " << in1d + in2d << std::endl;
+		double result = in1d + in2d;
+		std::cout << "The result is: " << result << std::endl;
+		return result;
 	}
 	//Catching out of range errors and handling them
 	catch (std::out_of_range const&) {
@@ -54,7 +62,7 @@ void add()
 }
 
 //Subtraction function
-void sub()
+double sub()
 {
 	std::string in1;
 	std::string in2;
@@ -65,7 +73,9 @@ void sub()
 		std::cin >> in2;
 		double in1d = stod(valueInjector(in1));
 		double in2d = stod(valueInjector(in2));
-		std::cout << "The result is: " << in1d - in2d << std::endl;
+		double result = in1d - in2d;
+		std::cout << "The result is: " << result << std::endl;
+		return result;
 	}
 	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
@@ -78,7 +88,7 @@ void sub()
 }
 
 //Division function
-void div()
+double div()
 {
 	std::string in1;
 	std::string in2;
@@ -89,7 +99,9 @@ void div()
 		std::cin >> in2;
 		double in1d = stod(valueInjector(in1));
 		double in2d = stod(valueInjector(in2));
-		std::cout << "The result is: " << in1d / in2d << std::endl;
+		double result = in1d/in2d;
+		std::cout << "The result is: " << result << std::endl;
+		return result;
 	}
 	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
@@ -102,7 +114,7 @@ void div()
 }
 
 //Multiplication function
-void mul()
+double mul()
 {
 	std::string in1;
 	std::string in2;
@@ -113,7 +125,9 @@ void mul()
 		std::cin >> in2;
 		double in1d = stod(valueInjector(in1));
 		double in2d = stod(valueInjector(in2));
-		std::cout << "The result is: " << in1d * in2d << std::endl;
+		double result = in1d*in2d;
+		std::cout << "The result is: " << result << std::endl;
+		return result;
 	}
 	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
@@ -128,7 +142,7 @@ void mul()
 //Secondary math functions
 
 //Square root function
-void sqr()
+double sqr()
 {
 	std::string in1;
 	std::string in2;
@@ -137,6 +151,7 @@ void sqr()
 		std::cin >> in1;
 		double in1d = stod(valueInjector(in1));
 		std::cout << "The result is: " << sqrt(in1d) << std::endl;
+		return sqrt(in1d);
 	}
 	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
@@ -149,7 +164,7 @@ void sqr()
 }
 
 //Hypotenuse function
-void hypote()
+double hypote()
 {
 	std::string in1;
 	std::string in2;
@@ -162,6 +177,7 @@ void hypote()
 		double in1d = stod(valueInjector(in1));
 		double in2d = stod(valueInjector(in2));
 		std::cout << "The hypotenuse is " << hypot(in1d, in2d) << std::endl;
+		return hypot(in1d, in2d);
 	}
 	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
@@ -174,7 +190,7 @@ void hypote()
 }
 
 //Distance function
-void dist()
+double dist()
 {
 	try {
 		std::string x1;
@@ -196,7 +212,9 @@ void dist()
 		double y2d = stod(valueInjector(y2));
 		double x = x2d - x1d;
 		double y = y2d - y1d;
-		std::cout << "The distance between the points is " << sqrt(pow(x, 2) + pow(y, 2)) << std::endl;
+		double result = sqrt(pow(x, 2) + pow(y, 2));
+		std::cout << "The distance between the points is " << result << std::endl;
+		return result;
 	}
 	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
@@ -304,7 +322,7 @@ void trirange()
 
 //A function to find the third interior angle of a triangle when given
 //the other two angles.
-void thirdangle()
+double thirdangle()
 {
 	std::string in1;
 	std::string in2;
@@ -316,147 +334,9 @@ void thirdangle()
 		double in1d = stod(valueInjector(in1));
 		double in2d = stod(valueInjector(in2));
 		double sub = in1d + in2d;
-		std::cout << "The third angle of your triangle is: " << fabs(sub - 180) << std::endl;
-	}
-	catch (std::out_of_range const&) {
-		std::cout << "Your input was too large, please try again.\n";
-		exit(EXIT_FAILURE);
-	}
-	catch (std::invalid_argument const&) {
-		std::cout << "Your input contains letters or unknown symbols please try again.\n";
-		exit(EXIT_FAILURE);
-	}
-}
-
-//Wave calculations
-
-//Wavelength calculations
-
-//A function to get the wavelength of a wave from the energy of the wave
-void wlfromeng()
-{
-	std::string in1;
-	std::string in2;
-	try {
-		std::cout << "What is the energy of your wave? ";
-		std::cin >> in1;
-		double in1d = stod(valueInjector(in1));
-		double ans = (speedoflight*planck)/in1d;
-		std::cout << "The wavelength of your wave is: " << ans << std::endl;
-	}
-	catch (std::out_of_range const&) {
-		std::cout << "Your input was too large, please try again.\n";
-		exit(EXIT_FAILURE);
-	}
-	catch (std::invalid_argument const&) {
-		std::cout << "Your input contains letters or unknown symbols please try again.\n";
-		exit(EXIT_FAILURE);
-	}
-}
-
-//A function to get the wavelength of a wave from the frequency of the wave
-void wlfromfrq()
-{
-	std::string in1;
-	std::string in2;
-	try {
-		std::cout << "What is the frequency of your wave? ";
-		std::cin >> in1;
-		double in1d = stod(valueInjector(in1));
-		double ans = speedoflight/in1d;
-		std::cout << "The wavelength of your wave is: " << ans << std::endl;
-	}
-	catch (std::out_of_range const&) {
-		std::cout << "Your input was too large, please try again.\n";
-		exit(EXIT_FAILURE);
-	}
-	catch (std::invalid_argument const&) {
-		std::cout << "Your input contains letters or unknown symbols please try again.\n";
-		exit(EXIT_FAILURE);
-	}
-}
-
-//Frequency calculations
-
-//A function to get frequency from energy
-void frqfromeng()
-{
-	std::string in1;
-	std::string in2;
-	try {
-		std::cout << "What is the energy of your wave? ";
-		std::cin >> in1;
-		double in1d = stod(valueInjector(in1));
-		double ans = in1d/planck;
-		std::cout << "The frequency of your wave is: " << ans << std::endl;
-	}
-	catch (std::out_of_range const&) {
-		std::cout << "Your input was too large, please try again.\n";
-		exit(EXIT_FAILURE);
-	}
-	catch (std::invalid_argument const&) {
-		std::cout << "Your input contains letters or unknown symbols please try again.\n";
-		exit(EXIT_FAILURE);
-	}
-}
-
-//A function to get frequency from wavelength
-void frqfromwl()
-{
-	std::string in1;
-	std::string in2;
-	try {
-		std::cout << "What is the wavelength of your wave? ";
-		std::cin >> in1;
-		double in1d = stod(valueInjector(in1));
-		double ans = speedoflight/in1d;
-		std::cout << "The frequency of your wave is: " << ans << std::endl;
-	}
-	catch (std::out_of_range const&) {
-		std::cout << "Your input was too large, please try again.\n";
-		exit(EXIT_FAILURE);
-	}
-	catch (std::invalid_argument const&) {
-		std::cout << "Your input contains letters or unknown symbols please try again.\n";
-		exit(EXIT_FAILURE);
-	}
-}
-
-//Enegy calculations
-
-//A function to get energy from wavelength
-void engfromwl()
-{
-	std::string in1;
-	std::string in2;
-	try {
-		std::cout << "What is the wavelength of your wave? ";
-		std::cin >> in1;
-		double in1d = stod(valueInjector(in1));
-		double ans = (planck*speedoflight)/in1d;
-		std::cout << "The energy of your wave is: " << ans << std::endl;
-	}
-	catch (std::out_of_range const&) {
-		std::cout << "Your input was too large, please try again.\n";
-		exit(EXIT_FAILURE);
-	}
-	catch (std::invalid_argument const&) {
-		std::cout << "Your input contains letters or unknown symbols please try again.\n";
-		exit(EXIT_FAILURE);
-	}
-}
-
-//A function to get energy from frequency
-void engfromfrq()
-{
-	std::string in1;
-	std::string in2;
-	try {
-		std::cout << "What is the frequency of your wave? ";
-		std::cin >> in1;
-		double in1d = stod(valueInjector(in1));
-		double ans = planck*in1d;
-		std::cout << "The energy of your wave is: " << ans << std::endl;
+		double result = fabs(sub - 180);
+		std::cout << "The third angle of your triangle is: " << result << std::endl;
+		return result;
 	}
 	catch (std::out_of_range const&) {
 		std::cout << "Your input was too large, please try again.\n";
@@ -477,7 +357,7 @@ void tempconvert()
 	try {
 		std::cout << "Type fc to convert from Fahrenheit to Celsius.\n"
 			  << "Type cf to convert from Celsius to Fahrenheit.\n"
-                 	  << ":";
+			  << ":";
 		std::cin >> in1;
 		std::cout << "Please input the temp you would like to convert: ";
 		std::cin >> in2;
@@ -490,7 +370,7 @@ void tempconvert()
 			out = (in2d-32) / 1.8;
 			std::cout << "The result is: " << out << " degrees Celsius" << std::endl;
 		}
-		
+
 	}
 	//Catching out of range errors and handling them
 	catch (std::out_of_range const&) {
@@ -507,13 +387,13 @@ void tempconvert()
 //Interactive mode
 void interactive()
 {
-	 /*
-	   The loop that takes user input and runs math functions
-	   accordingly. The loop repeats if the user wants to make
-	   another calculation, and exits if they want to do something
-	   else.
-	 */
-	
+	/*
+	  The loop that takes user input and runs math functions
+	  accordingly. The loop repeats if the user wants to make
+	  another calculation, and exits if they want to do something
+	  else.
+	*/
+
 	bool loop = true;
 
 	//Function selection string
@@ -537,10 +417,10 @@ void interactive()
 			  << "Type wf for frequency to wavelength\n"
 			  << "Type fe for energy to frequency\n"
 			  << "Type fw for wavelength to frequency\n"
-             		  << "Type ew for wavelength to energy\n"
-		          << "Type ef for frequency to energy\n"
+			  << "Type ew for wavelength to energy\n"
+			  << "Type ef for frequency to energy\n"
 			  << "Type tc for temperature conversion\n"
-                          << "All units for wave calculations are in meters and hertz\n"
+			  << "All units for wave calculations are in meters and hertz\n"
 			  << "If you would like to use scientific notation in your calculations\n"
 			  << "then use an e. An example would be, 6*10^11, would be 6e11\n"
 			  << "What would you like to do? ";
@@ -548,7 +428,7 @@ void interactive()
 		//Comparing the input string to determine desired function
 		if (symbol == "+") {
 			try {
-				add();
+				answer = add();
 			}
 			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
@@ -560,7 +440,7 @@ void interactive()
 			}
 		} else if (symbol == "-") {
 			try {
-				sub();
+				answer = sub();
 			}
 			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
@@ -572,7 +452,7 @@ void interactive()
 			}
 		} else if (symbol == "*") {
 			try {
-				mul();
+				answer = mul();
 			}
 			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
@@ -584,7 +464,7 @@ void interactive()
 			}
 		} else if (symbol == "/") {
 			try {
-				div();
+				answer = div();
 			}
 			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
@@ -596,7 +476,7 @@ void interactive()
 			}
 		} else if (symbol == "s") {
 			try {
-				sqr();
+				answer = sqr();
 			}
 			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
@@ -608,7 +488,7 @@ void interactive()
 			}
 		} else if (symbol == "h") {
 			try {
-				hypote();
+				answer = hypote();
 			}
 			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
@@ -621,7 +501,7 @@ void interactive()
 		} else if (symbol == "d") {
 			try
 			{
-				dist();
+				answer = dist();
 			}
 			catch (std::out_of_range const&)
 			{
@@ -671,79 +551,7 @@ void interactive()
 			}
 		} else if (symbol == "ta") {
 			try {
-				thirdangle();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			} 
-		} else if (symbol == "we") {
-			try {
-				wlfromeng();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
-		} else if (symbol == "wf") {
-			try {
-				wlfromfrq();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
-		} else if (symbol == "fe") {
-			try {
-				frqfromeng();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
-		} else if (symbol == "fw") {
-			try {
-				frqfromwl();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
-		} else if (symbol == "ew") {
-			try {
-				engfromwl();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
-		} else if (symbol == "ef") {
-			try {
-				engfromfrq();
+				answer = thirdangle();
 			}
 			catch (std::out_of_range const&) {
 				std::cout << "Your input was too large, please try again.\n";
@@ -830,15 +638,8 @@ void printHelp()
 		  << "\t-q\tQuadratic formula\n"
 		  << "\t-n\tThird angle of a triangle\n"
 		  << "\t-t\tTriangle side-length range\n"
-		  << "\t-e\tEnergy to wavelength\n"
-		  << "\t-f\tFrequency to wavelength\n"
-		  << "\t-g\tEnergy to frequency\n"
-		  << "\t-j\tWavelength to frequency\n"
-		  << "\t-k\tWavelength to energy\n"
-		  << "\t-l\tFrequency to energy\n"
 		  << "\t-c\tTemperature conversion\n"
 		  << "\t-i\tInteractive mode\n"
-		  << "All units for wave calculations are in meters and hertz.\n"
 		  << "If you would like to use scientific notation in your calculations\n"
 		  << "then use an e. For instance, 6*10^11, would be 6e11.\n"
 		  << "Replace a normal number input for 'pi'\nin order to utilize pi in your calculations.\n"
@@ -849,7 +650,7 @@ void printHelp()
 int main(int argc, char *argv[])
 {
 //Parsing command line options
-	switch (getopt(argc, argv, "asp/rhdmqiyntefgjkloc")) {
+	switch (getopt(argc, argv, "asp/rhdmqiyntoc")) {
 	case 'a':
 		add();
 		return 0;
@@ -894,30 +695,6 @@ int main(int argc, char *argv[])
 		trirange();
 		return 0;
 		break;
-	case 'e':
-		wlfromeng();
-		return 0;
-		break;
-	case 'f':
-		wlfromfrq();
-		return 0;
-		break;
-	case 'g':
-		frqfromeng();
-		return 0;
-		break;
-	case 'j':
-		frqfromwl();
-		return 0;
-		break;
-	case 'k':
-		engfromwl();
-		return 0;
-		break;
-	case 'l':
-		engfromfrq();
-		return 0;
-		break;
 	case 'c':
 		tempconvert();
 		return 0;
@@ -934,4 +711,3 @@ int main(int argc, char *argv[])
 	printHelp();
 	return 0;
 }
-
