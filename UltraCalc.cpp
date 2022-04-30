@@ -20,7 +20,6 @@ std::string valueInjector(std::string in)
 	} else if (in == "mole") {
 		return std::to_string(mole);
 	} else if (in == "ans") {
-		std::cout << "ANS WORKS";
 		return std::to_string(answer);
 	} else {
 		return in;
@@ -407,14 +406,7 @@ void interactive()
 			  << "Type qf for quadratic formula\n"
 			  << "Type tr for triangle side-length range\n"
 			  << "Type ta for the third angle of a triangle\n"
-			  << "Type we for energy to wavelength\n"
-			  << "Type wf for frequency to wavelength\n"
-			  << "Type fe for energy to frequency\n"
-			  << "Type fw for wavelength to frequency\n"
-			  << "Type ew for wavelength to energy\n"
-			  << "Type ef for frequency to energy\n"
 			  << "Type tc for temperature conversion\n"
-			  << "All units for wave calculations are in meters and hertz\n"
 			  << "If you would like to use scientific notation in your calculations\n"
 			  << "then use an e. An example would be, 6*10^11, would be 6e11\n"
 			  << "What would you like to do? ";
