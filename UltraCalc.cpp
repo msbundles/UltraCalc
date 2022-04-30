@@ -427,152 +427,29 @@ void interactive()
 		std::cin >> symbol;
 		//Comparing the input string to determine desired function
 		if (symbol == "+") {
-			try {
-				answer = add();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
+			answer = add();
 		} else if (symbol == "-") {
-			try {
-				answer = sub();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
+			answer = sub();
 		} else if (symbol == "*") {
-			try {
-				answer = mul();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
+			answer = mul();
 		} else if (symbol == "/") {
-			try {
-				answer = div();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
+			answer = div();
 		} else if (symbol == "s") {
-			try {
-				answer = sqr();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
+			answer = sqr();
 		} else if (symbol == "h") {
-			try {
-				answer = hypote();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
+			answer = hypote();
 		} else if (symbol == "d") {
-			try
-			{
-				answer = dist();
-			}
-			catch (std::out_of_range const&)
-			{
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&)
-			{
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
+			answer = dist();
 		} else if (symbol == "m") {
-			try {
-				mid();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
+			mid();
 		} else if (symbol == "qf") {
-			try {
-				quad();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
+			quad();
 		} else if (symbol == "tr") {
-			try {
-				trirange();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
+			trirange();
 		} else if (symbol == "ta") {
-			try {
-				answer = thirdangle();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
+			answer = thirdangle();
 		} else if (symbol == "tc") {
-			try {
-				tempconvert();
-			}
-			catch (std::out_of_range const&) {
-				std::cout << "Your input was too large, please try again.\n";
-				continue;
-			}
-			catch (std::invalid_argument const&) {
-				std::cout << "Your input contains letters or unknown symbols please try again.\n";
-				continue;
-			}
+			tempconvert();
 		} else if (symbol == "q") {
 			break;
 		} else {
