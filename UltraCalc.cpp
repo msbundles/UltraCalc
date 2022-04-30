@@ -4,10 +4,6 @@
 #include <unistd.h>
 #define _USE_MATH_DEFINES
 
-//Planck's constant for use in wave energy equations
-const double planck = 6.62607015*pow(10,-34);
-//The speed of light for use in wave calculations
-const double speedoflight = 2.99792458*pow(10,8);
 //Avagadro's number
 const double mole = 6.02214076*pow(10,23);
 //The var that stores the last answer.
@@ -423,7 +419,8 @@ void interactive()
 			  << "then use an e. An example would be, 6*10^11, would be 6e11\n"
 			  << "What would you like to do? ";
 		std::cin >> symbol;
-		//Comparing the input string to determine desired function
+
+                //Comparing the input string to determine desired function
 		if (symbol == "+") {
 			answer = add();
 		} else if (symbol == "-") {
