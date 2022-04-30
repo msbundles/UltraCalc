@@ -394,12 +394,10 @@ void interactive()
 	  else.
 	*/
 
-	bool loop = true;
-
-	//Function selection string
+        //Function selection string
 	std::string symbol;
 
-	while (loop) {
+	while (true) {
 		//Getting user choice of function
 		std::cout << "\nType q to quit\n"
 			  << "Type + to add\n"
@@ -461,10 +459,8 @@ void interactive()
 		std::string q;
 		std::cout << "Would you like to make another calculation (y/n)? ";
 		std::cin >> q;
-		if (q == "y") {
-			loop = true;
-		} else {
-			loop = false;
+		if (q != "y") {
+			break;
 		}
 	}
 }
