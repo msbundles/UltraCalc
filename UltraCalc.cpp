@@ -393,23 +393,24 @@ void interactive()
 	std::string symbol;
 
 	while (true) {
-		//Getting user choice of function
-		std::cout << "\nType q to quit\n"
-			  << "Type + to add\n"
-			  << "Type - to subtract\n"
-			  << "Type * to multiply\n"
-			  << "Type / to divide\n"
-			  << "Type s for square root\n"
-			  << "Type h for hypotenuse\n"
-			  << "Type d for distance formula\n"
-			  << "Type m for midpoint formula\n"
-			  << "Type qf for quadratic formula\n"
-			  << "Type tr for triangle side-length range\n"
-			  << "Type ta for the third angle of a triangle\n"
-			  << "Type tc for temperature conversion\n"
-			  << "If you would like to use scientific notation in your calculations\n"
-			  << "then use an e. An example would be, 6*10^11, would be 6e11\n"
-			  << "What would you like to do? ";
+
+	  std::cerr << R"""( | Symbol           |Function                    |
+ |------------------+----------------------------|
+ | q                | Quit                       |
+ | +                | Add                        |
+ | -                | Subtract                   |
+ | *                | Multiply                   |
+ | /                | Divide                     |
+ | s                | Square Root                |
+ | h                | Hypotenuse                 |
+ | Distance Formula |                            |
+ | m                | Midpoint Formula           |
+ | qf               | Quadratic Formula          |
+ | tr               | Triangle Side Length Range |
+ | ta               | Third Angle of Triangle    | 
+
+ Input your function: )""";
+	  
 		std::cin >> symbol;
 
                 //Comparing the input string to determine desired function
@@ -478,39 +479,60 @@ void interactive()
   | -k     | Wavelength to energy       |
   | -l     | Frequency to energy        |
   | -c     | Temperature conversion     |
-  | -i     | Interactive mode           |
+  | -i     | Interactive 
 */
-
+/*
+  | Symbol | Function                  |
+  |--------+---------------------------|
+  | +      | Add                       |
+  | -      | Subtract                  |
+  | *      | Multiply                  |
+  | /      | Divide                    |
+  | s      | Square Root               |
+  | h      | Hypotenuse                |
+  | d      | Distance Formula          |
+  | m      | Midpoint Formula          |
+  | qf     | Quadratic Formula         |
+  | tr     | Triangle Sidelength Range |
+  | ta     | Third Triangle Angle      |
+  | tc     | Tempature Conversion      |
+  If you would like to use scientific notation in your calculations
+  then use an e. An example would be, 6*10^11, would be 6e11
+  What would you like to do?
+*/
+ 
 //Prints the help info
 void printHelp()
 {
-	std::cerr << "Usage: "
-		  << "ultracalc"
-		  << " <option>\n"
-		  << "Options:\n"
-		  << "\t-h\tShow this help message\n"
-		  << "\t-a\tAdd\n"
-		  << "\t-s\tSubtract\n"
-		  << "\t-p\tMultiply\n"
-		  << "\t-/\tDivide\n"
-		  << "\t-r\tSquare root\n"
-		  << "\t-y\tHypotenuse\n"
-		  << "\t-d\tDistance formula\n"
-		  << "\t-m\tMidpoint formula\n"
-		  << "\t-q\tQuadratic formula\n"
-		  << "\t-n\tThird angle of a triangle\n"
-		  << "\t-t\tTriangle side-length range\n"
-		  << "\t-c\tTemperature conversion\n"
-		  << "\t-i\tInteractive mode\n"
-		  << "If you would like to use scientific notation in your calculations\n"
-		  << "then use an e. For instance, 6*10^11, would be 6e11.\n"
-		  << "Replace a normal number input for 'pi'\nin order to utilize pi in your calculations.\n"
-		  << "Replace a normal number input for 'mole'\nin order to utilize Avagadro's number in your calculations.\n";
+  std::cerr << R"""(  | Letter | Function                   |
+  |--------+----------------------------|
+  | -h     | Help                       |
+  | -a     | Add                        |
+  | -s     | Subtract                   |
+  | -p     | Multiply                   |
+  | -/     | Divide                     |
+  | -r     | Square Root                |
+  | -y     | Hypotenuse                 |
+  | -d     | Distance Formula           |
+  | -m     | Midpoint Formula           |
+  | -q     | Quadratic Formula          |
+  | -n     | Third angle of a triangle  |
+  | -t     | Triangle side-length range |
+  | -e     | Energy to wavelength       |
+  | -f     | Frequency to wavelength    |
+  | -g     | Energy to frequency        |
+  | -j     | Wavelength to frequency    |
+  | -k     | Wavelength to energy       |
+  | -l     | Frequency to energy        |
+  | -c     | Temperature conversion     |
+  | -i     | Interactive mode           |
+)""";
 }
 
 //The main function were command line arguments are parsed.
 int main(int argc, char *argv[])
 {
+  
 //Parsing command line options
 	switch (getopt(argc, argv, "asp/rhdmqiyntoc")) {
 	case 'a':
