@@ -82,6 +82,7 @@ double sub()
 	}
 }
 
+
 //Division function
 double div()
 {
@@ -394,7 +395,7 @@ void interactive()
 
 	while (true) {
 
-	  std::cerr << R"""( | Symbol           |Function                    |
+	  std::cerr << R"""( | Symbol           | Function                   |
  |------------------+----------------------------|
  | q                | Quit                       |
  | +                | Add                        |
@@ -403,12 +404,15 @@ void interactive()
  | /                | Divide                     |
  | s                | Square Root                |
  | h                | Hypotenuse                 |
- | Distance Formula |                            |
+ | d                | Distance Formula           |
  | m                | Midpoint Formula           |
  | qf               | Quadratic Formula          |
  | tr               | Triangle Side Length Range |
- | ta               | Third Angle of Triangle    | 
-
+ | ta               | Third Angle of Triangle    |
+ | tc               | Temperature Conversion     |
+ 
+ If you would like to use scientific notation in your calculations
+ then use an e. An example would be, 6*10^11, would be 6e11
  Input your function: )""";
 	  
 		std::cin >> symbol;
@@ -504,28 +508,28 @@ void interactive()
 //Prints the help info
 void printHelp()
 {
-  std::cerr << R"""(  | Letter | Function                   |
-  |--------+----------------------------|
-  | -h     | Help                       |
-  | -a     | Add                        |
-  | -s     | Subtract                   |
-  | -p     | Multiply                   |
-  | -/     | Divide                     |
-  | -r     | Square Root                |
-  | -y     | Hypotenuse                 |
-  | -d     | Distance Formula           |
-  | -m     | Midpoint Formula           |
-  | -q     | Quadratic Formula          |
-  | -n     | Third angle of a triangle  |
-  | -t     | Triangle side-length range |
-  | -e     | Energy to wavelength       |
-  | -f     | Frequency to wavelength    |
-  | -g     | Energy to frequency        |
-  | -j     | Wavelength to frequency    |
-  | -k     | Wavelength to energy       |
-  | -l     | Frequency to energy        |
-  | -c     | Temperature conversion     |
-  | -i     | Interactive mode           |
+  std::cerr << R"""( | Letter | Function                   |
+ |--------+----------------------------|
+ | -h     | Help                       |
+ | -a     | Add                        |
+ | -s     | Subtract                   |
+ | -p     | Multiply                   |
+ | -/     | Divide                     |
+ | -r     | Square Root                |
+ | -y     | Hypotenuse                 |
+ | -d     | Distance Formula           |
+ | -m     | Midpoint Formula           |
+ | -q     | Quadratic Formula          |
+ | -n     | Third angle of a triangle  |
+ | -t     | Triangle side-length range |
+ | -e     | Energy to wavelength       |
+ | -f     | Frequency to wavelength    |
+ | -g     | Energy to frequency        |
+ | -j     | Wavelength to frequency    |
+ | -k     | Wavelength to energy       |
+ | -l     | Frequency to energy        |
+ | -c     | Temperature conversion     |
+ | -i     | Interactive mode           |
 )""";
 }
 
